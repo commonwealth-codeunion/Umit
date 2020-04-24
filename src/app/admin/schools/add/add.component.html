@@ -1,0 +1,41 @@
+<form [formGroup]="schoolForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-input">
+        <label for="sc-name">Полное название школы:</label>
+        <input type="text" formControlName="name">
+    </div>
+
+    <b>Данные администрации:</b>
+    <div class="adm-data" formArrayName="admins">
+        
+        <div class="adm" *ngFor="let adm of admins.controls; let i=index" [formGroupName]="i">
+            
+            <div class="form-input">
+                <label for="adm-job">Должность:</label>
+                <select class="custom-select" (change)="changeJob($event, i)" formControlName="job">
+                    <option *ngFor="let job of Jobs" [ngValue]="job">{{job}}</option>
+                </select>
+            </div>
+            
+            
+            <div class="form-input">
+                <label for="adm-email">ФИО</label>
+                <input type="text" class="adm-name" formControlName="name">
+            </div>
+            
+            <div class="form-input">
+                <label for="adm-email">Почта</label>
+                <input type="email" class="adm-email" formControlName="email">
+            </div>
+
+            
+            <div class="form-input">
+                <label for="adm-phone">Телефон</label>
+                <input type="tel" class="adm-phone" formControlName="phone">
+            </div>
+        </div>
+        <div class="adm adm-add">
+            <button class="btn-add" (click)="addAdmin()" >+</button>
+        </div>
+    </div>
+    <button type="submit" [disabled]="!schoolForm.valid">Добавить</button>
+</form>

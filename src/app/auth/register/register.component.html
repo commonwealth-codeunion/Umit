@@ -1,0 +1,22 @@
+<form #userRegForm="ngForm" class="form" (ngSubmit)="createUser(userRegForm)">
+    <div class="error" *ngIf="authError">
+        <p>{{  authError?.message }}</p>
+    </div>
+    <div class="form__group">
+        <input ngModel name="firstName" #firstname="ngModel" type="text" placeholder="First name" class="form__input" />
+    </div>
+    
+    <div class="form__group">
+        <input ngModel name="lastName" #lastname="ngModel" type="text" placeholder="Last name" class="form__input" />
+    </div> 
+
+    <div class="form__group">
+        <input ngModel name="email" #email="ngModel" type="email" placeholder="Email" class="form__input" />
+    </div>
+    
+    <div class="form__group">
+        <input ngModel name="password" #password="ngModel" type="password" placeholder="Password" class="form__input" />
+    </div>
+    
+    <button class="btn" type="submit">Register</button>
+</form>

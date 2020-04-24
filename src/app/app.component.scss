@@ -1,0 +1,23 @@
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    margin-bottom: 25px;
+    user-select: none;
+}
+
+.title::after{
+    content: "";
+    width: 200px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    border-radius: 10px;
+    bottom: -10px;
+    left: 0;
+    transition: .5s;
+}
+
+html{
+    background-color: gray;
+    color: white;
+}
