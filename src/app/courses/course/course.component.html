@@ -1,0 +1,12 @@
+<div *ngIf="course" class="course">
+    <h1>{{ course.name }}</h1>
+    <div class="lessons">
+        <div *ngFor="let lesson of course.lessons; let i = index" class="lesson" (click)="getToLesson(i)">
+            <p>Урок {{ i+1 }}</p>
+            <p>Тема: {{ lesson.subject }}</p>
+        </div>
+        <div class="lesson add-lesson" (click)="addLesson()">
+            Добавить урок
+        </div>
+    </div>
+</div>

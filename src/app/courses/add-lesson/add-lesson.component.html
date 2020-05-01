@@ -1,0 +1,15 @@
+<div class="left nav">
+    <h1>Добавление урока</h1>
+    <input type="text" placeholder="Тема урока">
+    <span class="input-status"></span>
+    <nav>   
+        <div>
+            <div class="icon"></div>
+            <p>Введение</p>
+        </div>
+    </nav>
+</div>
+<form [formGroup]="lesson" (ngSubmit)="saveLesson()">
+    <input type="text" formControlName="subject">
+    <button type="submit">Save</button>
+</form>

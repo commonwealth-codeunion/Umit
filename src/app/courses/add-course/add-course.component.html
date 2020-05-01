@@ -1,0 +1,31 @@
+<app-add-lesson id="lesson-editor" (onSubmit)="saveLesson($event)" [actualLesson]="currentLesson" [lessonIndex]="actualLesson.lessonIndex"  [style.display]="lessonEdit ? 'block' : 'none'"></app-add-lesson>
+<div id="editor" [style.display]="!lessonEdit ? 'grid' : 'none'">
+    <div class="course left">
+        <h1>Добавление курса</h1>
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+            <p>Основная информация:</p>
+
+            <input id="c-name" type="text" placeholder="Название курса..." formControlName="name" name="name">
+            <div *ngIf="courseForm.controls['name'].invalid && (courseForm.controls['name'].dirty || courseForm.controls['name'].touched)" class="alert alert-danger">
+                <div *ngIf="courseForm.controls['name'].errors.required">
+                    Необходимо название курса
+                </div>
+            </div>
+            <textarea name="description" id="c-description" cols="30" rows="10" formControlName="description" name="description"></textarea>
+            
+            <button [disabled]="!courseForm.valid || courseForm.pristine" type="submit">Создать курс</button>
+        </form>
+    </div>
+    <div>
+        <div class="lessons right">
+            <div class="lesson" *ngFor="let lesson of lessons.value; let i = index" (click)="addLesson(i)">
+                <span>Урок {{ i+1 }}</span>
+                <p>{{ lesson.subject }}</p>
+            </div>
+            <div class="lesson add-lesson" (click)="addLesson()">
+                <span class="plus">+</span>
+                <p>Добавить урок</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,10 +3,10 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from "../models/user.model";
 import { of } from "rxjs";
 import {switchMap} from 'rxjs/operators';
 import { analytics } from 'firebase';
+import { User } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +16,7 @@ export class AuthService {
           eventAuthError$ = this.eventAuthError.asObservable();
 
   user$: Observable<User>;
-  newUser: any;
+  newUser: User;
   constructor(
     private Auth: AngularFireAuth,
     private db:   AngularFirestore,

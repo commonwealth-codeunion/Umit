@@ -1,5 +1,8 @@
 <h3 class="title">Школы в системе:</h3>
 <div class="schools">
+    <div *ngFor="let school of schools">
+        <p>{{ school.payload.doc.data().name }}</p>
+    </div>
     <div class="school add-school"><button>+</button></div>
 </div>
 <router-outlet></router-outlet>

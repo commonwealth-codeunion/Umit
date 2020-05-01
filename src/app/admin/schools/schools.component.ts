@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from '../../services/db.service';
 
 @Component({
   selector: 'app-schools',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./schools.component.scss']
 })
 export class SchoolsComponent implements OnInit {
-
-  constructor() { }
+  schools;
+  formError;
+  
+  constructor(private db: DbService) { }
 
   ngOnInit(): void {
+    this.db.getSchools()
+      .subscribe(schools => {
+        this.schools = schools;
+      });
   }
 
 }

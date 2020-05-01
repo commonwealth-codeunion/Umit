@@ -11,6 +11,12 @@ import { AdminGuard } from './guard/role/admin.guard';
 import { AdminComponent } from './admin/admin.component';
 import { SchoolsComponent } from './admin/schools/schools.component';
 import { AddComponent } from './admin/schools/add/add.component';
+import { CoursesComponent } from './courses/courses.component';
+import { AddCourseComponent } from './courses/add-course/add-course.component';
+import { LessonComponent } from './courses/lesson/lesson.component';
+import { AddLessonComponent } from './courses/add-lesson/add-lesson.component';
+import { CoursesListComponent } from './courses/courses-list/courses-list.component';
+import { CourseComponent } from './courses/course/course.component';
 
 const routes: Routes = [
   {
@@ -46,6 +52,51 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'courses',
+    component: CoursesComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'list',
+        pathMatch: 'prefix'
+      },
+      {
+        path: 'list',
+        component: CoursesListComponent,
+        data: {animation: 'listPage'}
+      },
+      {
+        path: 'add',
+        component: AddCourseComponent,
+        canActivate: [AdminGuard],
+        data: {animation: 'addPage'}
+      },
+      {
+        path: 'add-lesson',
+        component: AddLessonComponent,
+        data: {animation: 'lessonAddPage'}
+      },
+      {
+        path: ':dog',
+        children: [
+          {
+            path: '',
+            component: CourseComponent,
+          },
+          {
+            path: 'read/:lessonId',
+            component: LessonComponent
+          },
+          {
+            path: 'add-lesson',
+            component: AddLessonComponent
+          },
+        ]
+      }
+    ]
   },
   {
     path: 'secret',

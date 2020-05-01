@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { DbService } from '../../../services/db.service';
 
 @Component({
   selector: 'app-add',
@@ -7,14 +8,6 @@ import { FormBuilder, Validators, FormArray, FormControl } from '@angular/forms'
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
-  admin = this.fb.group({
-    name: ['', Validators.required],
-    job: ['', Validators.required],
-    email: ['', Validators.email],
-    phone: [''],
-  });
-  // director = { ...this.admin, job: new FormControl({value: 'Директор', disabled: true}) }
-  // director2 = { ...this.admin, job: new FormControl({value: 'Завуч', disabled: true}) }
   schoolForm = this.fb.group({
     name: ['', Validators.required],
     admins: this.fb.array([]), 
@@ -27,25 +20,35 @@ export class AddComponent implements OnInit {
   }
 
   addAdmin(){
-    this.admins.push(this.admin);
+    this.admins.push(
+      this.fb.group({
+        name: ['', Validators.required],
+        job:  ['', Validators.required],
+        email: ['', Validators.email],
+        phone: [''],
+      })
+    );
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private db: DbService,
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
     console.log(this.schoolForm.value);
-    
+    this.db.addSchool(this.schoolForm.value);
   }
 
   changeJob(e, i) {
-    console.log(this.admins.controls[i]);
+    console.log(this.admins);
     
-    this.admins.controls[i].job.setValue(e.target.value, {
-      onlySelf: true 
-    })
+    // this.admins.controls[i].controls['job'].setValue(e.target.value, {
+      // onlySelf: true 
+    // })
   }
 
 }

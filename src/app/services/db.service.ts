@@ -13,4 +13,31 @@ export class DbService {
   getUsers(){
     return this.firestore.collection("Users").snapshotChanges();
   }
+
+  addSchool(school){
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection("Schools")
+          .add(school)
+          .then(res => {}, err => reject(err));
+    });
+  }
+
+  getSchools(){
+    return this.firestore.collection("Schools").snapshotChanges();
+  }
+
+  getCourse(cid: string){
+    return this.firestore.collection("Courses").doc(cid).get();
+  }
+
+  addCourse(course){
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection("Courses")
+          .add(course)
+          .then(res => {}, err => reject(err));
+    });
+  }
+
 }

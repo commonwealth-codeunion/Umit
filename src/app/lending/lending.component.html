@@ -1,9 +1,1451 @@
-<h1>Landing page</h1>
-<div *ngIf="user$">
-    Саламалейкум, тут вы найдете лучшее дистанционное обучение на всем свете!
-</div>
-<div class="buttons" *ngIf="!user$">
-    <p>Войдите или зарегестрируйтесь чтобы просматривать секретный контент</p><br>
-    <a (click)="login()" class="btn">Войти</a>
-    <a (click)="register()" class="btn">Зарегистрироваться</a>
-</div>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Creative</title>
+    <link rel="stylesheet" href="/assets/lending/a39c139896a25eac75c0fe6f00b16698.css" data-minify="1">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="http://themebubble.com/demo/webify/creative/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Home - Creative">
+    <meta property="og:description" content="Build it Beautiful. &amp; Unparalleled. Webify is the all-in-one WordPress theme to builda beautiful online presence for you. Take 1-min Tour weekend Super Creative Digital transformation describes an organisation making a fundamental change from its current state. Learn More timer Avant Garde We can change the way your business thinks and behaves long-term in order …">
+    <meta property="og:url" content="http://themebubble.com/demo/webify/creative/">
+    <meta property="og:site_name" content="Creative">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Build it Beautiful. &amp; Unparalleled. Webify is the all-in-one WordPress theme to builda beautiful online presence for you. Take 1-min Tour weekend Super Creative Digital transformation describes an organisation making a fundamental change from its current state. Learn More timer Avant Garde We can change the way your business thinks and behaves long-term in order […]">
+    <meta name="twitter:title" content="Home - Creative">
+    <meta name="twitter:image" content="http://themebubble.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/client4.png">
+    <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="http://webify-13e95.kxcdn.com/">
+    <link rel="alternate" type="application/rss+xml" title="Creative » Feed" href="http://themebubble.com/demo/webify/creative/feed/">
+    <link rel="alternate" type="application/rss+xml" title="Creative » Comments Feed" href="http://themebubble.com/demo/webify/creative/comments/feed/">
+    <link rel="stylesheet" id="webify-fonts-css" href="/assets/lending/css" type="text/css" media="all">
+    <link rel="stylesheet" id="material-icon-css" href="/assets/lending/icon" type="text/css" media="all">
+    <script type="text/javascript" src="/assets/lending/jquery-1.12.4-wp.js"></script>
+    <link rel="https://api.w.org/" href="http://themebubble.com/demo/webify/creative/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://themebubble.com/demo/webify/creative/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://themebubble.com/demo/webify/creative/wp-includes/wlwmanifest.xml">
+    <meta name="generator" content="WordPress 5.4">
+    <link rel="shortlink" href="http://themebubble.com/demo/webify/creative/">
+    <link rel="alternate" type="application/json+oembed" href="http://themebubble.com/demo/webify/creative/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fthemebubble.com%2Fdemo%2Fwebify%2Fcreative%2F">
+    <link rel="alternate" type="text/xml+oembed" href="http://themebubble.com/demo/webify/creative/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fthemebubble.com%2Fdemo%2Fwebify%2Fcreative%2F&amp;format=xml">
+    <link rel="icon" href="http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/05/cropped-Favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/05/cropped-Favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/05/cropped-Favicon-180x180.png">
+    <meta name="msapplication-TileImage" content="http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/05/cropped-Favicon-270x270.png">
+    <style type="text/css">
+        .tb-page-header {
+            background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/peter-secan-422909-unsplash-2.jpg)
+        }
+        
+        .tb-header-border1 {
+            border-color: #fff
+        }
+        
+        .tb-site-header .tb-btn {
+            background: rgba(92, 106, 196, .1)!important
+        }
+        
+        .tb-site-header .tb-btn {
+            border-color: transparent!important
+        }
+        
+        .tb-site-header .tb-btn:hover {
+            border-color: transparent!important
+        }
+        
+        .tb-site-header .tb-btn {
+            color: #5c6ac4!important
+        }
+    </style>
+    <style type="text/css">
+        .tb-page-header {
+            background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/peter-secan-422909-unsplash-2.jpg)
+        }
+        
+        .tb-header-border1 {
+            border-color: #fff
+        }
+        
+        .tb-site-header .tb-btn {
+            background: rgba(92, 106, 196, .1)!important
+        }
+        
+        .tb-site-header .tb-btn {
+            border-color: transparent!important
+        }
+        
+        .tb-site-header .tb-btn:hover {
+            border-color: transparent!important
+        }
+        
+        .tb-site-header .tb-btn {
+            color: #5c6ac4!important
+        }
+    </style>
+    <noscript>
+        <style id="rocket-lazyload-nojs-css">
+            .rll-youtube-player,
+            [data-lazy-src] {
+                display: none!important
+            }
+        </style>
+    </noscript>
+    <style>
+        .HiddenByLaitis {
+            opacity: 0 !important;
+            display: none !important;
+            pointer-events: none !important;
+        }
+        
+        .ShownByLaitis,
+        .HiddenByLaitis {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: auto !important;
+            height: auto !important;
+        }
+    </style>
+</head>
+   <div class="tb-preloader" style="display: none;">
+        <div class="tb-preloader-in" style="display: none;"><img src="/assets/lending/logo-dark.png" alt="loader-logo"></div>
+    </div>
+    <header class="tb-site-header tb-default-width tb-style1 tb-sticky-disabled tb-solid-header tb-color1 tb-header-border1 tb-remove-promobar-active small-height">
+        <div class="tb-main-header">
+            <div class="container">
+                <div class="tb-main-header-in">
+                    <div class="tb-main-header-left">
+                        <div class="tb-site-branding">
+                            <a href="#" class="tb-custom-logo-link "><img src="./assets/images/logotype 1.png" alt="logo" class="tb-custom-logo"></a>
+                        </div>
+                    </div>
+                    <div class="tb-main-header-right">
+                        <div class="tb-m-menu-btn"><span></span></div>
+                        <nav class="tb-main-nav tb-primary-nav">
+                            <ul id="nav" class="tb-primary-nav-list">
+                                <li id="menu-item-528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-528"><a href="#">Главная</a></li>
+                                <li id="menu-item-555" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-555 tb-mega-menu"><a href="/news">Новости</a></li>
+                                <li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587"><a href="/events">Мероприятия</a></li>
+                                <li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="/contacts">Контакты</a></li>
+                            </ul>
+                        </nav>
+                        <div class="tb-header-btn"><a href="/auth/login" class="tb-btn  tb-style9">Войти</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="tb-content elementor-page" style="margin-bottom: 462px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div data-elementor-type="wp-post" data-elementor-id="7" class="elementor elementor-7" data-elementor-settings="[]">
+                        <div class="elementor-inner">
+                            <div class="elementor-section-wrap">
+                                <section class="elementor-element elementor-element-a7859ab elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="a7859ab" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row">
+                                            <div class="elementor-element elementor-element-be8a882 elementor-column elementor-col-100 elementor-top-column" data-id="be8a882" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-84f9973 elementor-widget elementor-widget-webify-hero-banner-widget" data-id="84f9973" data-element_type="widget" data-widget_type="webify-hero-banner-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-hero-banner">
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="empty-space marg-lg-b100 marg-sm-b60"></div>
+                                                                                <div class="tb-hero-text">
+                                                                                    <h1 class="tb-hero-title tb-text-slider tb-f60-lg tb-f38-sm tb-font-name tb-mp0">Онлайн-обучение. <br>Для каждого.</h1>
+                                                                                    <div class="empty-space marg-lg-b5"></div>
+                                                                                    <div class="tb-hero-subtitle tb-f20-lg tb-line1-6 tb-mb2">Мы сделали сервис для онлайн обучения который подходит каждому человеку <br>не зависимо от того, какие у него ограничения</div>
+                                                                                    <div class="empty-space marg-lg-b30 marg-sm-b30"></div>
+                                                                                    <div class="tb-hero-btn"> <a href="#" (click)="register()" target="_self" class="tb-btn tb-style6 tb-color4">Зарегистрироваться</a></div>
+                                                                                    <div class="empty-space marg-lg-b60 marg-sm-b40"></div>
+                                                                                    <div class="tb-clients tb-style1">
+                                                                                        <div class="tb-client tb-style4"><img src="/assets/lending/client4.png" alt=""></div>
+                                                                                        <div class="tb-client tb-style4"><img src="/assets/lending/client2.png" alt=""></div>
+                                                                                        <div class="tb-client tb-style4"><img src="/assets/lending/client1.png" alt=""></div>
+                                                                                        <div class="tb-client tb-style4"><img src="/assets/lending/client3.png" alt=""></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="empty-space marg-lg-b100 marg-sm-b0"></div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="empty-space marg-lg-b100 marg-sm-b30"></div>
+                                                                                <div class="tb-hero-img text-center"> <img src="/assets/lending/hero-img-1.png" alt="hero-img">
+                                                                                    <div class="tb-shap-animation-wrap">
+                                                                                        <div class="tb-shap-animation tb-shap-animation2"><span></span></div>
+                                                                                        <div class="tb-shap-animation tb-shap-animation3"></div>
+                                                                                    </div>
+                                                                                    <div class="tb-pattern-animation">
+                                                                                        <div class="tb-pattern2"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="empty-space marg-lg-b100 marg-sm-b60"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-057a290 elementor-widget elementor-widget-divider" data-id="057a290" data-element_type="widget" data-widget_type="divider.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-eafde0a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="eafde0a" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-7fec455 elementor-column elementor-col-100 elementor-top-column" data-id="7fec455" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-a3c1526 elementor-widget elementor-widget-spacer" data-id="a3c1526" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-74f06e7 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="74f06e7" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-b404298 elementor-column elementor-col-50 elementor-top-column" data-id="b404298" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <section class="elementor-element elementor-element-622e95d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="622e95d" data-element_type="section">
+                                                            <div class="elementor-container elementor-column-gap-extended">
+                                                                <div class="elementor-row removeNegativeMargin">
+                                                                    <div class="elementor-element elementor-element-b0a710f elementor-column elementor-col-50 elementor-inner-column" data-id="b0a710f" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-d5f1cd0 elementor-widget elementor-widget-webify-icon-box-widget animated fadeInLeft" data-id="d5f1cd0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;}" data-widget_type="webify-icon-box-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-hover-layer">
+                                                                                            <div class="hover-container tb-style3">
+                                                                                                <div class="tb-icon-box tb-style9  tb-color1 tb-radious-5">
+                                                                                                    <div class="tb-icon tb-f22-lg tb-radious-50 tb-icon-bg tb-flex"></div>
+                                                                                                    <div class="empty-space marg-lg-b15"></div>
+                                                                                                    <h3 class="tb-iconbox-heading tb-f18-lg tb-font-name tb-m0 tb-mt2">Родители</h3>
+                                                                                                    <div class="empty-space marg-lg-b5"></div>
+                                                                                                    <div class="tb-iconbox-text">
+                                                                                                        <div class="tb-iconbox-text-in tb-description-text">На нашей платформе вы сможете найти курсы и статьи для воспитания ребенка с ОВЗ. Зарегестрируйте ребенка и дайте возможность проходить курсы и развиваться</div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-icon-box-btn"><a href="http://themebubble.com/demo/webify/creative/#" target="_self" class="tb-btn tb-style1">Узнать больше</a></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="elementor-element elementor-element-72a031f elementor-widget elementor-widget-spacer" data-id="72a031f" data-element_type="widget" data-widget_type="spacer.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="elementor-spacer">
+                                                                                            <div class="elementor-spacer-inner"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="elementor-element elementor-element-76c5c29 elementor-widget elementor-widget-webify-icon-box-widget animated fadeInUp" data-id="76c5c29" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="webify-icon-box-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <style type="text/css" scoped="">
+                                                                                            .custom-color-properties-5ea9f79013281.tb-icon-box.tb-style9.tb-color1:hover {
+                                                                                                background-image: linear-gradient(120deg, rgba(156, 106, 222, .6) 0%, #9c6ade);
+                                                                                                box-shadow: 0 10px 19px 1px rgba(156, 106, 222, .2)
+                                                                                            }
+                                                                                            
+                                                                                            .custom-color-properties-5ea9f79013281.tb-icon-box.tb-style9.tb-color1 .tb-icon {
+                                                                                                background-color: rgba(156, 106, 222, .2)
+                                                                                            }
+                                                                                        </style>
+                                                                                        <div class="tb-hover-layer">
+                                                                                            <div class="hover-container tb-style3">
+                                                                                                <div class="tb-icon-box tb-style9  custom-color-properties-5ea9f79013281 tb-color1 tb-radious-5">
+                                                                                                    <div class="tb-icon tb-f22-lg tb-radious-50 tb-icon-bg tb-flex"></div>
+                                                                                                    <div class="empty-space marg-lg-b15"></div>
+                                                                                                    <h3 class="tb-iconbox-heading tb-f18-lg tb-font-name tb-m0 tb-mt2">Преподователи</h3>
+                                                                                                    <div class="empty-space marg-lg-b5"></div>
+                                                                                                    <div class="tb-iconbox-text">
+                                                                                                        <div class="tb-iconbox-text-in tb-description-text">We can change the way your business thinks and behaves long-term in order to combat the threat of digital disruption.</div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-icon-box-btn"><a href="http://themebubble.com/demo/webify/creative/#" target="_self" class="tb-btn tb-style1">Learn More</a></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="elementor-element elementor-element-e421286 elementor-column elementor-col-50 elementor-inner-column" data-id="e421286" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-da8b200 elementor-widget elementor-widget-spacer" data-id="da8b200" data-element_type="widget" data-widget_type="spacer.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="elementor-spacer">
+                                                                                            <div class="elementor-spacer-inner"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="elementor-element elementor-element-1464e5c elementor-widget elementor-widget-webify-icon-box-widget animated fadeInRight" data-id="1464e5c" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}" data-widget_type="webify-icon-box-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <style type="text/css" scoped="">
+                                                                                            .custom-color-properties-5ea9f790148c5.tb-icon-box.tb-style9.tb-color1:hover {
+                                                                                                background-image: linear-gradient(120deg, rgba(222, 54, 24, .6) 0%, #de3618);
+                                                                                                box-shadow: 0 10px 19px 1px rgba(222, 54, 24, .2)
+                                                                                            }
+                                                                                            
+                                                                                            .custom-color-properties-5ea9f790148c5.tb-icon-box.tb-style9.tb-color1 .tb-icon {
+                                                                                                background-color: rgba(222, 54, 24, .2)
+                                                                                            }
+                                                                                        </style>
+                                                                                        <div class="tb-hover-layer">
+                                                                                            <div class="hover-container tb-style3">
+                                                                                                <div class="tb-icon-box tb-style9  custom-color-properties-5ea9f790148c5 tb-color1 tb-radious-5">
+                                                                                                    <div class="tb-icon tb-f22-lg tb-radious-50 tb-icon-bg tb-flex"></div>
+                                                                                                    <div class="empty-space marg-lg-b15"></div>
+                                                                                                    <h3 class="tb-iconbox-heading tb-f18-lg tb-font-name tb-m0 tb-mt2">Инвалиды</h3>
+                                                                                                    <div class="empty-space marg-lg-b5"></div>
+                                                                                                    <div class="tb-iconbox-text">
+                                                                                                        <div class="tb-iconbox-text-in tb-description-text">It’s also a cultural change, a shift in mindset where the whole company supports a new way of thinking.</div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-icon-box-btn"><a href="http://themebubble.com/demo/webify/creative/#" target="_self" class="tb-btn tb-style1">Learn More</a></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="elementor-element elementor-element-2e4ac89 elementor-widget elementor-widget-spacer" data-id="2e4ac89" data-element_type="widget" data-widget_type="spacer.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="elementor-spacer">
+                                                                                            <div class="elementor-spacer-inner"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="elementor-element elementor-element-fc8d337 elementor-widget elementor-widget-webify-icon-box-widget animated fadeInUp" data-id="fc8d337" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="webify-icon-box-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <style type="text/css" scoped="">
+                                                                                            .custom-color-properties-5ea9f790156f5.tb-icon-box.tb-style9.tb-color1:hover {
+                                                                                                background-image: linear-gradient(120deg, rgba(71, 193, 191, .6) 0%, #47c1bf);
+                                                                                                box-shadow: 0 10px 19px 1px rgba(71, 193, 191, .2)
+                                                                                            }
+                                                                                            
+                                                                                            .custom-color-properties-5ea9f790156f5.tb-icon-box.tb-style9.tb-color1 .tb-icon {
+                                                                                                background-color: rgba(71, 193, 191, .2)
+                                                                                            }
+                                                                                        </style>
+                                                                                        <div class="tb-hover-layer">
+                                                                                            <div class="hover-container tb-style3">
+                                                                                                <div class="tb-icon-box tb-style9  custom-color-properties-5ea9f790156f5 tb-color1 tb-radious-5">
+                                                                                                    <div class="tb-icon tb-f22-lg tb-radious-50 tb-icon-bg tb-flex"></div>
+                                                                                                    <div class="empty-space marg-lg-b15"></div>
+                                                                                                    <h3 class="tb-iconbox-heading tb-f18-lg tb-font-name tb-m0 tb-mt2">Студенты</h3>
+                                                                                                    <div class="empty-space marg-lg-b5"></div>
+                                                                                                    <div class="tb-iconbox-text">
+                                                                                                        <div class="tb-iconbox-text-in tb-description-text">We will work with you as the business transforms into one that is efficient, customer-centric.</div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-icon-box-btn"><a href="http://themebubble.com/demo/webify/creative/#" target="_self" class="tb-btn tb-style1">Learn More</a></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-fed90b8 elementor-column elementor-col-50 elementor-top-column" data-id="fed90b8" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-37d8ac6 elementor-widget elementor-widget-spacer" data-id="37d8ac6" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-78fae10 elementor-widget elementor-widget-webify-text-block-with-button-widget" data-id="78fae10" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="webify-text-block-with-button-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-vertical-middle tb-section-heading">
+                                                                    <div class="tb-sample-text">
+                                                                        <h2 class="tb-f32-lg tb-f28-sm tb-big-heading tb-font-name tb-m0">Получите все необходимое.</h2>
+                                                                        <div class="empty-space marg-lg-b15"></div>
+                                                                        <div class="tb-f16-lg tb-description tb-line1-6">Наш сервис помогает людям узнать больше о воспитании и обучении людей с особыми потребностями
+                                                                            <div class="empty-space marg-lg-b25"></div> Не важно кто вы, если вы работаете с такими людьми - мы вам поможем.
+                                                                            <div class="empty-space marg-lg-b10"></div>
+                                                                        </div>
+                                                                        <div class="empty-space marg-lg-b25"></div> <a href="" (click)="register()" target="_self" class="tb-btn tb-btn-primary tb-style5 tb-color5"><span>Зарегистрироваться</span></a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-9d5b709 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9d5b709" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-1a8ba11 elementor-column elementor-col-100 elementor-top-column" data-id="1a8ba11" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-e07e56c elementor-widget elementor-widget-spacer" data-id="e07e56c" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-a8377aa elementor-widget elementor-widget-divider" data-id="a8377aa" data-element_type="widget" data-widget_type="divider.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-14f20ab elementor-widget elementor-widget-spacer" data-id="14f20ab" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-69dcedc elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="69dcedc" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-2fed205 elementor-column elementor-col-100 elementor-top-column" data-id="2fed205" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-8eebd59 elementor-widget elementor-widget-webify-section-heading-widget animated fadeIn" data-id="8eebd59" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="webify-section-heading-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-section-heading tb-style2">
+                                                                    <h2 class="tb-f36-lg tb-f30-sm tb-font-name tb-big-heading tb-mt-5 tb-mt-3-sm tb-m0">Практика использования</h2>
+                                                                    <div class="empty-space marg-lg-b10"></div>
+                                                                    <div none="" class="tb-f18-lg tb-f16-sm tb-line1-6 tb-description tb-mb-7">Над разработкой работала команда профиссионалов, мы использовали передовые технологии чтобы адаптировать сервис пл=од любые потребности. Как он работает на практике, в данном видео:</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-04ef234 elementor-widget elementor-widget-spacer" data-id="04ef234" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <section class="elementor-element elementor-element-e8c71cc elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="e8c71cc" data-element_type="section">
+                                                            <div class="elementor-container elementor-column-gap-extended">
+                                                                <div class="elementor-row removeNegativeMargin">
+                                                                    <div class="elementor-element elementor-element-633d6b1 elementor-column elementor-col-50 elementor-inner-column" data-id="633d6b1" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-1a85408 elementor-widget elementor-widget-webify-video-block-widget" data-id="1a85408" data-element_type="widget" data-widget_type="webify-video-block-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-video-block-wrapper tb-hover-layer">
+                                                                                            <div class="tb-video-block tb-style1 tb-bg tb-flex tb-radious-4" style="background-image: url(http://i3.ytimg.com/vi/PSmGcBf0yiY/maxresdefault.jpg);">
+                                                                                                <div class="tb-video-block-inner tb-hover-layer1">
+                                                                                                    <a href="https://www.youtube.com/embed/PSmGcBf0yiY" class="tb-play-btn tb-style1 tb-video-open"></a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="elementor-element elementor-element-3b3a5d6 elementor-column elementor-col-50 elementor-inner-column" data-id="3b3a5d6" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-dd18ecd elementor-widget elementor-widget-webify-icon-box-widget" data-id="dd18ecd" data-element_type="widget" data-widget_type="webify-icon-box-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-icon-box tb-style10 tb-color1">
+                                                                                            <div class="tb-icon tb-color1 tb-f22-lg tb-radious-50 tb-icon-bg tb-flex"></div>
+                                                                                            <div class="empty-space marg-lg-b10"></div>
+                                                                                            <h3 class="tb-iconbox-heading tb-f18-lg tb-font-name tb-m0 tb-mt2">Super Creative</h3>
+                                                                                            <div class="empty-space marg-lg-b5"></div>
+                                                                                            <div class="tb-iconbox-text tb-description-text">Our award-winning templates are the most beautiful way to present your ideas online. Stand out with a professional website, portfolio, or online store.</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="elementor-element elementor-element-68b78ba elementor-widget elementor-widget-spacer" data-id="68b78ba" data-element_type="widget" data-widget_type="spacer.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="elementor-spacer">
+                                                                                            <div class="elementor-spacer-inner"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="elementor-element elementor-element-612f7d1 elementor-widget elementor-widget-webify-icon-box-widget animated fadeInUp" data-id="612f7d1" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="webify-icon-box-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-icon-box tb-style10 tb-color1">
+                                                                                            <div class="tb-icon tb-color1 tb-f22-lg tb-radious-50 tb-icon-bg tb-flex"></div>
+                                                                                            <div class="empty-space marg-lg-b10"></div>
+                                                                                            <h3 class="tb-iconbox-heading tb-f18-lg tb-font-name tb-m0 tb-mt2">Design-driven</h3>
+                                                                                            <div class="empty-space marg-lg-b5"></div>
+                                                                                            <div class="tb-iconbox-text tb-description-text">Trusted by the world’s best, Squarespace empowers people with creative ideas to succeed. Every block is designed and coded with huge attention to details.</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-9648f43 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9648f43" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-7543d95 elementor-column elementor-col-100 elementor-top-column" data-id="7543d95" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-37efe1a elementor-widget elementor-widget-spacer" data-id="37efe1a" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-922027a elementor-widget elementor-widget-divider" data-id="922027a" data-element_type="widget" data-widget_type="divider.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-6627e18 elementor-widget elementor-widget-spacer" data-id="6627e18" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-153b77c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="153b77c" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-d03dbe3 elementor-column elementor-col-100 elementor-top-column" data-id="d03dbe3" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-dd34b63 elementor-widget elementor-widget-webify-section-heading-widget" data-id="dd34b63" data-element_type="widget" data-widget_type="webify-section-heading-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-section-heading tb-style2">
+                                                                    <h2 class="tb-f36-lg tb-f30-sm tb-font-name tb-big-heading tb-mt-5 tb-mt-3-sm tb-m0">But don’t take our work for it</h2>
+                                                                    <div class="empty-space marg-lg-b10"></div>
+                                                                    <div none="" class="tb-f18-lg tb-f16-sm tb-line1-6 tb-description tb-mb-7">See what people have to say about our product</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-09aaae0 elementor-widget elementor-widget-spacer" data-id="09aaae0" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-ce6c682 elementor-widget elementor-widget-webify-testimonial-slider-widget" data-id="ce6c682" data-element_type="widget" data-widget_type="webify-testimonial-slider-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-arrow-closest tb-poind-closest tb-slider tb-style1">
+                                                                    <div class="slick-container" data-delay="2000" data-autoplay="0" data-loop="1" data-speed="600" data-autoplay-timeout="1000" data-center="0" data-slides-per-view="1">
+                                                                        <div class="slick-wrapper slick-initialized slick-slider slick-dotted">
+                                                                            <div class="slick-list draggable">
+                                                                                <div class="slick-track" style="opacity: 1; width: 5550px; transform: translate3d(-1110px, 0px, 0px);">
+                                                                                    <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 1110px;">
+                                                                                        <div>
+                                                                                            <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                <div class="tb-testimonial tb-style6 tb-border tb-radious-5">
+                                                                                                    <div class="tb-testimonial-left">
+                                                                                                        <div class="tb-testimonial-logo"><img src="/assets/lending/client3.png" alt="logo"></div>
+                                                                                                        <div class="tb-testimonial-text tb-f18-lg tb-line1-6">
+                                                                                                            <p>“Your testimonial page serves as a platform to show off how others have benefited from your product or service, making it a powerful tool.”</p>
+                                                                                                        </div>
+                                                                                                        <div class="tb-testimonial-meta">
+                                                                                                            <div class="tb-testimonial-signature"><img src="/assets/lending/signature.png" alt="signature"></div>
+                                                                                                            <h3 class="tb-f16-lg tb-font-name tb-testimonial-name tb-m0">Anna Robertson</h3>
+                                                                                                            <div class=" tb-mb-6 tb-testimonial-position tb-f13-lg">Web Consultant</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-testimonial-right">
+                                                                                                        <div class="tb-bg tb-testimonial-img" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/Testi.png);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 1110px;" role="tabpanel" id="slick-slide00" tabindex="-1">
+                                                                                        <div>
+                                                                                            <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                <div class="tb-testimonial tb-style6 tb-border tb-radious-5">
+                                                                                                    <div class="tb-testimonial-left">
+                                                                                                        <div class="tb-testimonial-logo"><img src="/assets/lending/client2.png" alt="logo"></div>
+                                                                                                        <div class="tb-testimonial-text tb-f18-lg tb-line1-6">
+                                                                                                            <p>“We had so many different requirements for the tool that we easily knocked out 99% of them because they didn’t have the customizations and the features that we needed”</p>
+                                                                                                        </div>
+                                                                                                        <div class="tb-testimonial-meta">
+                                                                                                            <div class="tb-testimonial-signature"><img src="/assets/lending/signature.png" alt="signature"></div>
+                                                                                                            <h3 class="tb-f16-lg tb-font-name tb-testimonial-name tb-m0">Bob Mathews</h3>
+                                                                                                            <div class=" tb-mb-6 tb-testimonial-position tb-f13-lg">System Engineer</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-testimonial-right">
+                                                                                                        <div class="tb-bg tb-testimonial-img" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/testimonial1.png);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 1110px;" role="tabpanel" id="slick-slide01" tabindex="-1">
+                                                                                        <div>
+                                                                                            <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                <div class="tb-testimonial tb-style6 tb-border tb-radious-5">
+                                                                                                    <div class="tb-testimonial-left">
+                                                                                                        <div class="tb-testimonial-logo"><img src="/assets/lending/client3.png" alt="logo"></div>
+                                                                                                        <div class="tb-testimonial-text tb-f18-lg tb-line1-6">
+                                                                                                            <p>“Your testimonial page serves as a platform to show off how others have benefited from your product or service, making it a powerful tool.”</p>
+                                                                                                        </div>
+                                                                                                        <div class="tb-testimonial-meta">
+                                                                                                            <div class="tb-testimonial-signature"><img src="/assets/lending/signature.png" alt="signature"></div>
+                                                                                                            <h3 class="tb-f16-lg tb-font-name tb-testimonial-name tb-m0">Anna Robertson</h3>
+                                                                                                            <div class=" tb-mb-6 tb-testimonial-position tb-f13-lg">Web Consultant</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-testimonial-right">
+                                                                                                        <div class="tb-bg tb-testimonial-img" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/Testi.png);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" style="width: 1110px;">
+                                                                                        <div>
+                                                                                            <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                <div class="tb-testimonial tb-style6 tb-border tb-radious-5">
+                                                                                                    <div class="tb-testimonial-left">
+                                                                                                        <div class="tb-testimonial-logo"><img src="/assets/lending/client2.png" alt="logo"></div>
+                                                                                                        <div class="tb-testimonial-text tb-f18-lg tb-line1-6">
+                                                                                                            <p>“We had so many different requirements for the tool that we easily knocked out 99% of them because they didn’t have the customizations and the features that we needed”</p>
+                                                                                                        </div>
+                                                                                                        <div class="tb-testimonial-meta">
+                                                                                                            <div class="tb-testimonial-signature"><img src="/assets/lending/signature.png" alt="signature"></div>
+                                                                                                            <h3 class="tb-f16-lg tb-font-name tb-testimonial-name tb-m0">Bob Mathews</h3>
+                                                                                                            <div class=" tb-mb-6 tb-testimonial-position tb-f13-lg">System Engineer</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-testimonial-right">
+                                                                                                        <div class="tb-bg tb-testimonial-img" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/testimonial1.png);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 1110px;">
+                                                                                        <div>
+                                                                                            <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                <div class="tb-testimonial tb-style6 tb-border tb-radious-5">
+                                                                                                    <div class="tb-testimonial-left">
+                                                                                                        <div class="tb-testimonial-logo"><img src="/assets/lending/client3.png" alt="logo"></div>
+                                                                                                        <div class="tb-testimonial-text tb-f18-lg tb-line1-6">
+                                                                                                            <p>“Your testimonial page serves as a platform to show off how others have benefited from your product or service, making it a powerful tool.”</p>
+                                                                                                        </div>
+                                                                                                        <div class="tb-testimonial-meta">
+                                                                                                            <div class="tb-testimonial-signature"><img src="/assets/lending/signature.png" alt="signature"></div>
+                                                                                                            <h3 class="tb-f16-lg tb-font-name tb-testimonial-name tb-m0">Anna Robertson</h3>
+                                                                                                            <div class=" tb-mb-6 tb-testimonial-position tb-f13-lg">Web Consultant</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="tb-testimonial-right">
+                                                                                                        <div class="tb-bg tb-testimonial-img" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/Testi.png);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="pagination tb-style1 hidden">
+                                                                        <ul class="slick-dots" role="tablist" style="display: flex;">
+                                                                            <li class="slick-active" role="presentation">
+                                                                                <button type="button" role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button>
+                                                                            </li>
+                                                                            <li role="presentation">
+                                                                                <button type="button" role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 2" tabindex="-1">2</button>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <!-- <div class="swipe-arrow tb-style1">
+                                                                        <div class="slick-arrow-left slick-arrow" style="display: block;"><i class="fa fa-angle-left"></i></div>
+                                                                        <div class="slick-arrow-right slick-arrow" style="display: block;"><i class="fa fa-angle-right"></i></div>
+                                                                    </div> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- <section class="elementor-element elementor-element-73f29b6 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="73f29b6" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-36a9204 elementor-column elementor-col-100 elementor-top-column" data-id="36a9204" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-b0bbd5e elementor-widget elementor-widget-spacer" data-id="b0bbd5e" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-25fb354 elementor-widget elementor-widget-divider" data-id="25fb354" data-element_type="widget" data-widget_type="divider.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-b5acc24 elementor-widget elementor-widget-spacer" data-id="b5acc24" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section> -->
+                                <!-- <section class="elementor-element elementor-element-71fedad elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="71fedad" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-ecc016e elementor-column elementor-col-100 elementor-top-column" data-id="ecc016e" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-cc23a70 elementor-widget elementor-widget-webify-section-heading-widget animated fadeInUp" data-id="cc23a70" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="webify-section-heading-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-section-heading tb-style2">
+                                                                    <h2 class="tb-f36-lg tb-f30-sm tb-font-name tb-big-heading tb-mt-5 tb-mt-3-sm tb-m0">Let our work do the talking</h2>
+                                                                    <div class="empty-space marg-lg-b10"></div>
+                                                                    <div none="" class="tb-f18-lg tb-f16-sm tb-line1-6 tb-description tb-mb-7">Brands we've successfully made along the way</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-168d0bc elementor-widget elementor-widget-spacer" data-id="168d0bc" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-39c7b12 elementor-widget elementor-widget-webify-portfolio-widget" data-id="39c7b12" data-element_type="widget" data-widget_type="webify-portfolio-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-portfolio-wrapper">
+                                                                    <div class="tb-isotop-filter tb-style1 text-center">
+                                                                        <ul class="tb-mp0 tb-flex tb-f16-lg tb-black111-c ">
+                                                                            <li class="active"><a href="http://themebubble.com/demo/webify/creative/#" data-filter="*">All</a></li>
+                                                                            <li><a href="http://themebubble.com/demo/webify/creative/#" data-filter=".branding">Branding</a></li>
+                                                                            <li><a href="http://themebubble.com/demo/webify/creative/#" data-filter=".motion">Motion</a></li>
+                                                                            <li><a href="http://themebubble.com/demo/webify/creative/#" data-filter=".photography">Photography</a></li>
+                                                                            <li><a href="http://themebubble.com/demo/webify/creative/#" data-filter=".ui-ux">UI/UX</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="tb-isotop tb-style1 tb-port-col-3 tb-has-gutter tb-lightgallery" style="position: relative; height: 624px;">
+                                                                        <div class="tb-grid-sizer"></div>
+                                                                        <div class="tb-isotop-item branding photography ui-ux" style="position: absolute; left: 0%; top: 0px;">
+                                                                            <div class="tb-image-box tb-style2 tb-relative tb-radious-4 tb-border tb-height3">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/portfolio/adios-concept-design/" class="tb-image-link  tb-zoom">
+                                                                                    <div class="tb-image tb-relative">
+                                                                                        <div class="tb-bg tb-zoom-in1" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/willian-justen-de-vasconcellos-550613-unsplash-1-1.jpg);"></div>
+                                                                                    </div>
+                                                                                    <div class="tb-cursor"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tb-isotop-item motion photography" style="position: absolute; left: 33.3333%; top: 0px;">
+                                                                            <div class="tb-image-box tb-style2 tb-relative tb-radious-4 tb-border tb-height4">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/portfolio/sony-camera-website/" class="tb-image-link  tb-zoom">
+                                                                                    <div class="tb-image tb-relative">
+                                                                                        <div class="tb-bg tb-zoom-in1" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/g83y6do219w.jpg);"></div>
+                                                                                    </div>
+                                                                                    <div class="tb-cursor"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tb-isotop-item motion ui-ux" style="position: absolute; left: 66.6667%; top: 0px;">
+                                                                            <div class="tb-image-box tb-style2 tb-relative tb-radious-4 tb-border tb-height3">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/portfolio/save-the-world/" class="tb-image-link  tb-zoom">
+                                                                                    <div class="tb-image tb-relative">
+                                                                                        <div class="tb-bg tb-zoom-in1" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/w6onivdcfn0.jpg);"></div>
+                                                                                    </div>
+                                                                                    <div class="tb-cursor"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tb-isotop-item motion ui-ux" style="position: absolute; left: 0%; top: 242px;">
+                                                                            <div class="tb-image-box tb-style2 tb-relative tb-radious-4 tb-border tb-height4">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/portfolio/marketing-for-jrink/" class="tb-image-link  tb-zoom">
+                                                                                    <div class="tb-image tb-relative">
+                                                                                        <div class="tb-bg tb-zoom-in1" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/wbfvgbpdxfa.jpg);"></div>
+                                                                                    </div>
+                                                                                    <div class="tb-cursor"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tb-isotop-item branding photography" style="position: absolute; left: 66.6667%; top: 242px;">
+                                                                            <div class="tb-image-box tb-style2 tb-relative tb-radious-4 tb-border tb-height4">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/portfolio/planet-fitness/" class="tb-image-link  tb-zoom">
+                                                                                    <div class="tb-image tb-relative">
+                                                                                        <div class="tb-bg tb-zoom-in1" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/aiony-haust-783975-unsplash-1.jpg);"></div>
+                                                                                    </div>
+                                                                                    <div class="tb-cursor"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tb-isotop-item branding" style="position: absolute; left: 33.3333%; top: 382px;">
+                                                                            <div class="tb-image-box tb-style2 tb-relative tb-radious-4 tb-border tb-height3">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/portfolio/identity-design-for-fliplr/" class="tb-image-link  tb-zoom">
+                                                                                    <div class="tb-image tb-relative">
+                                                                                        <div class="tb-bg tb-zoom-in1" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/p3fh6ya5evi.jpg);"></div>
+                                                                                    </div>
+                                                                                    <div class="tb-cursor"></div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section> -->
+                                <section class="elementor-element elementor-element-98a35f8 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="98a35f8" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-d31dea7 elementor-column elementor-col-100 elementor-top-column" data-id="d31dea7" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-8c0bb78 elementor-widget elementor-widget-spacer" data-id="8c0bb78" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-65fd467 elementor-widget elementor-widget-divider" data-id="65fd467" data-element_type="widget" data-widget_type="divider.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-ce4b384 elementor-widget elementor-widget-spacer" data-id="ce4b384" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-46dc3e6 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="46dc3e6" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row">
+                                            <div class="elementor-element elementor-element-f0d2aa2 elementor-column elementor-col-50 elementor-top-column" data-id="f0d2aa2" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-f3be14d elementor-widget elementor-widget-webify-image-gallery-slider-widget" data-id="f3be14d" data-element_type="widget" data-widget_type="webify-image-gallery-slider-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-half-slider tb-style1">
+                                                                    <div class="tb-half-slider-in">
+                                                                        <div class="tb-arrow-closest tb-poind-closest tb-slider tb-style5 tb-type1">
+                                                                            <div class="slick-container" data-delay="2000" data-autoplay="0" data-loop="1" data-speed="600" data-autoplay-timeout="3000" data-center="1" data-slides-per-view="3">
+                                                                                <div class="slick-wrapper slick-initialized slick-slider slick-dotted">
+                                                                                    <div class="slick-list draggable" style="padding: 0px;">
+                                                                                        <div class="slick-track" style="opacity: 1; width: 5184px; transform: translate3d(-1296px, 0px, 0px);">
+                                                                                            <div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/qbbei2rpb7a.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/jmz6qjvjjvk.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/rck3lz_cohq.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/npy0x4xew60.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-current slick-center" data-slick-index="0" aria-hidden="true" style="width: 432px;" role="tabpanel" id="slick-slide10" tabindex="-1">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/qbbei2rpb7a.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 432px;" role="tabpanel" id="slick-slide11" tabindex="-1">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/jmz6qjvjjvk.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 432px;" role="tabpanel" id="slick-slide12" tabindex="-1">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/rck3lz_cohq.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 432px;" role="tabpanel" id="slick-slide13" tabindex="-1">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/npy0x4xew60.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-cloned" data-slick-index="4" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/qbbei2rpb7a.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/jmz6qjvjjvk.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-cloned slick-center" data-slick-index="6" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/rck3lz_cohq.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" style="width: 432px;">
+                                                                                                <div>
+                                                                                                    <div class="slick-slide" style="width: 100%; display: inline-block;" aria-hidden="true">
+                                                                                                        <div class="tb-bg" style="background-image: url(http://webify-13e95.kxcdn.com/demo/webify/creative/wp-content/uploads/sites/8/2019/04/npy0x4xew60.jpg);"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="pagination tb-style3">
+                                                                                <ul class="slick-dots" role="tablist" style="display: flex;">
+                                                                                    <li class="slick-active" role="presentation">
+                                                                                        <button type="button" role="tab" id="slick-slide-control10" aria-controls="slick-slide10" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button>
+                                                                                    </li>
+                                                                                    <li role="presentation">
+                                                                                        <button type="button" role="tab" id="slick-slide-control11" aria-controls="slick-slide11" aria-label="2 of 2" tabindex="-1">2</button>
+                                                                                    </li>
+                                                                                    <li role="presentation">
+                                                                                        <button type="button" role="tab" id="slick-slide-control12" aria-controls="slick-slide12" aria-label="3 of 2" tabindex="-1">3</button>
+                                                                                    </li>
+                                                                                    <li role="presentation">
+                                                                                        <button type="button" role="tab" id="slick-slide-control13" aria-controls="slick-slide13" aria-label="4 of 2" tabindex="-1">4</button>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <!-- <div class="swipe-arrow tb-style3">
+                                                                                <div class="slick-arrow-left slick-arrow" style="display: block;"><i class="fa fa-angle-left"></i></div>
+                                                                                <div class="slick-arrow-right slick-arrow" style="display: block;"><i class="fa fa-angle-right"></i></div>
+                                                                            </div> -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-852f7ae elementor-column elementor-col-50 elementor-top-column" data-id="852f7ae" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-a377c4e elementor-widget elementor-widget-webify-text-block-with-button-widget" data-id="a377c4e" data-element_type="widget" data-widget_type="webify-text-block-with-button-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-vertical-middle tb-section-heading">
+                                                                    <div class="tb-sample-text">
+                                                                        <h2 class="tb-f32-lg tb-f28-sm tb-big-heading tb-font-name tb-m0">Look like an expert,<br>right from the start.</h2>
+                                                                        <div class="empty-space marg-lg-b15"></div>
+                                                                        <div class="tb-f16-lg tb-description tb-line1-6">It’s more then a WordPress theme. It’s like a design tool that let’s you create websites of any niche, easily. Each and every block is created with AB testing and UX research. Take a look at all the pages and elements and see how beautiful your webiste will become. No coding required, ofcourse!</div>
+                                                                        <div class="empty-space marg-lg-b25"></div> <a href="http://themebubble.com/demo/webify/creative/#" target="_self" class="tb-btn tb-btn-primary tb-style5 tb-color5"><span>Discover More</span></a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-2f4e93d elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="2f4e93d" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-0b95510 elementor-column elementor-col-100 elementor-top-column" data-id="0b95510" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-32bdae2 elementor-widget elementor-widget-spacer" data-id="32bdae2" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-18dc584 elementor-widget elementor-widget-divider" data-id="18dc584" data-element_type="widget" data-widget_type="divider.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-1fcfe4e elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="1fcfe4e" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-666fdeb elementor-column elementor-col-100 elementor-top-column" data-id="666fdeb" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-0919c28 elementor-widget elementor-widget-spacer" data-id="0919c28" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-a546bfb elementor-widget elementor-widget-webify-section-heading-widget" data-id="a546bfb" data-element_type="widget" data-widget_type="webify-section-heading-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-section-heading tb-style2">
+                                                                    <h2 class="tb-f36-lg tb-f30-sm tb-font-name tb-big-heading tb-mt-5 tb-mt-3-sm tb-m0">Fun facts from workspace</h2>
+                                                                    <div class="empty-space marg-lg-b10"></div>
+                                                                    <div none="" class="tb-f18-lg tb-f16-sm tb-line1-6 tb-description tb-mb-7">We’re hustlers, we get shit done no matter what</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-78ff437 elementor-widget elementor-widget-spacer" data-id="78ff437" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <section class="elementor-element elementor-element-5153088 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="5153088" data-element_type="section">
+                                                            <div class="elementor-container elementor-column-gap-extended">
+                                                                <div class="elementor-row">
+                                                                    <div class="elementor-element elementor-element-73d2bca elementor-column elementor-col-25 elementor-inner-column" data-id="73d2bca" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-db998f5 elementor-widget elementor-widget-webify-counter-widget" data-id="db998f5" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="webify-counter-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-counter tb-style1 tb-color1 tb-radious-4 tb-border">
+                                                                                            <div class="tb-counter-icon tb-f22-lg tb-icon-bg tb-radious-50 tb-flex"></div>
+                                                                                            <div class="empty-space marg-lg-b10"></div>
+                                                                                            <h3 class="tb-counter-number tb-count-no tb-line1 tb-f60-lg tb-font-name tb-m0">230</h3>
+                                                                                            <div class="tb-counter-title tb-label tb-f16-lg tb-line1-3">Website Created</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="elementor-element elementor-element-60dd1c8 elementor-column elementor-col-25 elementor-inner-column" data-id="60dd1c8" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-4b274b0 elementor-widget elementor-widget-webify-counter-widget" data-id="4b274b0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="webify-counter-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-counter tb-style1 tb-color1 tb-radious-4 tb-border">
+                                                                                            <div class="tb-counter-icon tb-f22-lg tb-icon-bg tb-radious-50 tb-flex"> </div>
+                                                                                            <div class="empty-space marg-lg-b10"></div>
+                                                                                            <h3 class="tb-counter-number tb-count-no tb-line1 tb-f60-lg tb-font-name tb-m0">34</h3>
+                                                                                            <div class="tb-counter-title tb-label tb-f16-lg tb-line1-3">Cloud Apps Built</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="elementor-element elementor-element-2dff33f elementor-column elementor-col-25 elementor-inner-column" data-id="2dff33f" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-c3fc0ae elementor-widget elementor-widget-webify-counter-widget" data-id="c3fc0ae" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="webify-counter-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-counter tb-style1 tb-color1 tb-radious-4 tb-border">
+                                                                                            <div class="tb-counter-icon tb-f22-lg tb-icon-bg tb-radious-50 tb-flex"></div>
+                                                                                            <div class="empty-space marg-lg-b10"></div>
+                                                                                            <h3 class="tb-counter-number tb-count-no tb-line1 tb-f60-lg tb-font-name tb-m0">72+</h3>
+                                                                                            <div class="tb-counter-title tb-label tb-f16-lg tb-line1-3">Projects Complated</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="elementor-element elementor-element-d18d3e4 elementor-column elementor-col-25 elementor-inner-column" data-id="d18d3e4" data-element_type="column">
+                                                                        <div class="elementor-column-wrap  elementor-element-populated">
+                                                                            <div class="elementor-widget-wrap">
+                                                                                <div class="elementor-element elementor-element-90e3225 elementor-widget elementor-widget-webify-counter-widget" data-id="90e3225" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="webify-counter-widget.default">
+                                                                                    <div class="elementor-widget-container">
+                                                                                        <div class="tb-counter tb-style1 tb-color1 tb-radious-4 tb-border">
+                                                                                            <div class="tb-counter-icon tb-f22-lg tb-icon-bg tb-radious-50 tb-flex"></div>
+                                                                                            <div class="empty-space marg-lg-b10"></div>
+                                                                                            <h3 class="tb-counter-number tb-count-no tb-line1 tb-f60-lg tb-font-name tb-m0">14k</h3>
+                                                                                            <div class="tb-counter-title tb-label tb-f16-lg tb-line1-3">Likes on Dribbble</div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                        <div class="elementor-element elementor-element-b33c5d9 elementor-widget elementor-widget-spacer" data-id="b33c5d9" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-ac78fdf elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="ac78fdf" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-00e024e elementor-column elementor-col-100 elementor-top-column" data-id="00e024e" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-8f62e90 elementor-widget elementor-widget-divider" data-id="8f62e90" data-element_type="widget" data-widget_type="divider.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-divider"> <span class="elementor-divider-separator"> </span></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-7e55f7a elementor-widget elementor-widget-spacer" data-id="7e55f7a" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-93772e9 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="93772e9" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-c5f51d4 elementor-column elementor-col-100 elementor-top-column" data-id="c5f51d4" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-b30554b elementor-widget elementor-widget-webify-section-heading-widget animated fadeInUp" data-id="b30554b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="webify-section-heading-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-section-heading tb-style2">
+                                                                    <h2 class="tb-f36-lg tb-f30-sm tb-font-name tb-big-heading tb-mt-5 tb-mt-3-sm tb-m0">Latest reads from blog</h2>
+                                                                    <div class="empty-space marg-lg-b10"></div>
+                                                                    <div none="" class="tb-f18-lg tb-f16-sm tb-line1-6 tb-description tb-mb-7">See what we're up to on a rainy night</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-3c7842d elementor-widget elementor-widget-spacer" data-id="3c7842d" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-6b59abe elementor-widget elementor-widget-webify-recent-news-widget" data-id="6b59abe" data-element_type="widget" data-widget_type="webify-recent-news-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="row tb-recent-news-wrapper-style5"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-7096c8d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="7096c8d" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-extended">
+                                        <div class="elementor-row removeNegativeMargin">
+                                            <div class="elementor-element elementor-element-94941cc elementor-column elementor-col-100 elementor-top-column" data-id="94941cc" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-bf44007 elementor-widget elementor-widget-webify-recent-news-widget" data-id="bf44007" data-element_type="widget" data-widget_type="webify-recent-news-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="row tb-recent-news-wrapper-style5">
+                                                                    <div class="col-lg-4 post-215 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle tag-food tag-fun tag-office tag-workspace">
+                                                                        <div class="tb-post tb-style5 tb-color1">
+                                                                            <div class="tb-zoom">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/2019/04/15/the-thin-blur-line-between-corporate-lifestyle-other-things/" class="tb-post-thumb tb-zoom-in1"> <img width="570" height="392" src="/assets/lending/d2phv1q00pk-570x392.jpg" class="attachment-webify-rectangle-medium-alt size-webify-rectangle-medium-alt wp-post-image" alt=""> </a>
+                                                                            </div>
+                                                                            <div class="tb-post-info">
+                                                                                <div class="tb-catagory tb-style1">
+                                                                                    <ul class="post-categories">
+                                                                                        <li><a href="http://themebubble.com/demo/webify/creative/category/lifestyle/" rel="category tag">Lifestyle</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div class="empty-space marg-lg-b5"></div>
+                                                                                <h2 class="tb-post-title tb-f18-lg  tb-m0"><a href="http://themebubble.com/demo/webify/creative/2019/04/15/the-thin-blur-line-between-corporate-lifestyle-other-things/">The Thin Blur Line Between Corporate Lifestyle &amp; Other Things</a></h2>
+                                                                                <div class="tb-post-label tb-style1"> <span class="tb-post-author-name vcard"><a class="url fn n" href="http://themebubble.com/demo/webify/creative/author/developmentthemebubble/">David Beck</a></span> <span class="tb-post-date">April 15, 2019</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 post-214 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle tag-food tag-fun tag-office tag-workspace">
+                                                                        <div class="tb-post tb-style5 tb-color1">
+                                                                            <div class="tb-zoom">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/2019/04/15/halfway-though-a-decade-more/" class="tb-post-thumb tb-zoom-in1"> <img width="570" height="392" src="/assets/lending/hcfwew744z4-570x392.jpg" class="attachment-webify-rectangle-medium-alt size-webify-rectangle-medium-alt wp-post-image" alt=""> </a>
+                                                                            </div>
+                                                                            <div class="tb-post-info">
+                                                                                <div class="tb-catagory tb-style1">
+                                                                                    <ul class="post-categories">
+                                                                                        <li><a href="http://themebubble.com/demo/webify/creative/category/lifestyle/" rel="category tag">Lifestyle</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div class="empty-space marg-lg-b5"></div>
+                                                                                <h2 class="tb-post-title tb-f18-lg  tb-m0"><a href="http://themebubble.com/demo/webify/creative/2019/04/15/halfway-though-a-decade-more/">Halfway Though a Decade &amp; More</a></h2>
+                                                                                <div class="tb-post-label tb-style1"> <span class="tb-post-author-name vcard"><a class="url fn n" href="http://themebubble.com/demo/webify/creative/author/developmentthemebubble/">David Beck</a></span> <span class="tb-post-date">April 15, 2019</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 post-213 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle tag-food tag-fun tag-office tag-workspace">
+                                                                        <div class="tb-post tb-style5 tb-color1">
+                                                                            <div class="tb-zoom">
+                                                                                <a href="http://themebubble.com/demo/webify/creative/2019/04/15/how-to-live-a-balanced-life-like-everyone/" class="tb-post-thumb tb-zoom-in1"> <img width="570" height="392" src="/assets/lending/5qgiuubxkwm-570x392.jpg" class="attachment-webify-rectangle-medium-alt size-webify-rectangle-medium-alt wp-post-image" alt=""> </a>
+                                                                            </div>
+                                                                            <div class="tb-post-info">
+                                                                                <div class="tb-catagory tb-style1">
+                                                                                    <ul class="post-categories">
+                                                                                        <li><a href="http://themebubble.com/demo/webify/creative/category/lifestyle/" rel="category tag">Lifestyle</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <div class="empty-space marg-lg-b5"></div>
+                                                                                <h2 class="tb-post-title tb-f18-lg  tb-m0"><a href="http://themebubble.com/demo/webify/creative/2019/04/15/how-to-live-a-balanced-life-like-everyone/">How to Live a Balanced Life like Everyone</a></h2>
+                                                                                <div class="tb-post-label tb-style1"> <span class="tb-post-author-name vcard"><a class="url fn n" href="http://themebubble.com/demo/webify/creative/author/developmentthemebubble/">David Beck</a></span> <span class="tb-post-date">April 15, 2019</span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-664a619 elementor-widget elementor-widget-spacer" data-id="664a619" data-element_type="widget" data-widget_type="spacer.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="elementor-spacer">
+                                                                    <div class="elementor-spacer-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="elementor-element elementor-element-b851a0b elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="b851a0b" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}" style="width: 1901px; left: -395.5px;">
+                                    <div class="elementor-container elementor-column-gap-no">
+                                        <div class="elementor-row">
+                                            <div class="elementor-element elementor-element-a92cbdb elementor-column elementor-col-100 elementor-top-column" data-id="a92cbdb" data-element_type="column">
+                                                <div class="elementor-column-wrap  elementor-element-populated">
+                                                    <div class="elementor-widget-wrap">
+                                                        <div class="elementor-element elementor-element-e28479e elementor-widget elementor-widget-webify-newsletter-widget" data-id="e28479e" data-element_type="widget" data-widget_type="webify-newsletter-widget.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div class="tb-7a77d0-bg style2">
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="empty-space marg-lg-b0 marg-sm-b60"></div>
+                                                                                <div class="tb-vertical-middle text-center">
+                                                                                    <div class="tb-vertical-middle-in"> <img src="/assets/lending/newsletter-img.png" alt="image"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="empty-space marg-lg-b100 marg-sm-b30"></div>
+                                                                                <div class="tb-section-heading tb-style2">
+                                                                                    <h2 class="tb-f40-lg tb-f25-sm tb-subscribe-heading tb-font-name tb-mt-7 tb-mb-2 tb-white-c">Get updates at your inbox, Whenever you want it.</h2>
+                                                                                    <div class="empty-space marg-lg-b5 marg-sm-b5"></div>
+                                                                                    <div class="tb-f16-lg tb-line1-6 tb-subscribe-sub-heading tb-white-c7">News and updates of our product, people &amp; more</div>
+                                                                                    <div class="empty-space marg-lg-b25 marg-sm-b25"></div>
+                                                                                    <form action="http://themebubble.com/demo/webify/creative/?na=s" onsubmit="return newsletter_check(this)" method="post" class="tb-newsletter tb-style7">
+                                                                                        <div class="tb-form-field">
+                                                                                            <input type="text" name="ne" required="" placeholder="Email Address">
+                                                                                        </div>
+                                                                                        <input type="submit" class="tb-newsletter-submit newsletter-submit" value="Subscribe Newsletter">
+                                                                                    </form>
+                                                                                </div>
+                                                                                <div class="empty-space marg-lg-b100 marg-sm-b60"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="tb-site-footer tb-style1 tb-dark-footer tb-111-bg tb-sticky-footer">
+        <hr>
+        <div class="empty-space marg-lg-b40 marg-sm-b40"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tb-cta tb-style1">
+                        <div class="tb-cta-left">
+                            <h2 class="tb-f18-lg tb-font-name tb-white-c6 tb-m0">Ready to revolutionize your website?</h2>
+                            <div class="empty-space marg-lg-b0 marg-sm-b30"></div>
+                        </div>
+                        <div class="tb-cta-right"> <a href="http://themebubble.com/demo/webify/creative/#" class="tb-btn tb-style3 tb-btn-style tb-btn-br50 tb-cta-btn tb-color1"><span>Discover More</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="empty-space marg-lg-b40 marg-sm-b40"></div>
+        <hr>
+        <div class="empty-space marg-lg-b60 marg-sm-b60"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div id="nav_menu-4" class="widget tb-footer-item tb-footer_widget widget_nav_menu">
+                        <h2 class="tb-footer-widget-title tb-font-name"><span>Resources</span></h2>
+                        <div class="menu-footer-menu-container">
+                            <ul id="menu-footer-menu" class="menu">
+                                <li id="menu-item-437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item menu-item-437"><a href="http://themebubble.com/demo/webify/creative/" aria-current="page">Home</a></li>
+                                <li id="menu-item-442" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-442"><a href="http://themebubble.com/demo/webify/creative/#">About</a></li>
+                                <li id="menu-item-438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-438"><a href="http://themebubble.com/demo/webify/creative/blog/">Blog</a></li>
+                                <li id="menu-item-441" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-441"><a href="http://themebubble.com/demo/webify/creative/#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div id="nav_menu-3" class="widget tb-footer-item tb-footer_widget widget_nav_menu">
+                        <h2 class="tb-footer-widget-title tb-font-name"><span>Company</span></h2>
+                        <div class="menu-footer-menu-2-container">
+                            <ul id="menu-footer-menu-2" class="menu">
+                                <li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-454"><a href="http://themebubble.com/demo/webify/creative/#">Product</a></li>
+                                <li id="menu-item-455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455"><a href="http://themebubble.com/demo/webify/creative/#">FAQ</a></li>
+                                <li id="menu-item-456" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-456"><a href="http://themebubble.com/demo/webify/creative/#">Privacy Policy</a></li>
+                                <li id="menu-item-457" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-457"><a href="http://themebubble.com/demo/webify/creative/#">Terms &amp; Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div id="webify_contact_details-4" class="widget tb-footer-item tb-footer_widget tb-footer-address-widget">
+                        <h2 class="tb-footer-widget-title tb-font-name"><span>Contact Details</span></h2>
+                        <ul class="tb-mp0">
+                            <li><i class="fa fa-map-marker"></i>221B Baker Street</li>
+                            <li><i class="fa fa-phone"></i>(372) 587-2335</li>
+                            <li><i class="fa fa-clock-o"></i>11 a.m - 12 p.m</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div id="webify_newsletter-3" class="widget tb-footer-item tb-footer_widget tb-widget-newsletter">
+                        <h2 class="tb-footer-widget-title tb-font-name"><span>Sign up for Newsletter</span></h2>
+                        <form method="post" action="http://themebubble.com/demo/webify/creative/?na=s" onsubmit="return newsletter_check(this)" class="tb-newsletter tb-style8">
+                            <input type="email" name="ne" required="" placeholder="Enter Email Address">
+                            <button type="submit" class="tb-newsletter-submit"><i class="fa fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="empty-space marg-lg-b55 marg-sm-b55"></div>
+        <hr>
+        <div class="tb-copyright tb-style1 tb-f13-lg text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">© Built with pride and caffeine. All rights reserved.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="tb-scrollup" class="scrollup-show"><i class="fa fa-angle-up"></i></div>
+    <div class="tb-video-popup">
+        <div class="tb-video-popup-overlay"></div>
+        <div class="tb-video-popup-content">
+            <div class="tb-video-popup-layer"></div>
+            <div class="tb-video-popup-container">
+                <div class="tb-video-popup-align">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="/assets/lending/saved_resource.html"></iframe>
+                    </div>
+                </div>
+                <div class="tb-video-popup-close"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/lending/script.js" data-minify="1" defer=""></script>
+    <span id="elementor-device-mode" class="elementor-screen-only"></span>

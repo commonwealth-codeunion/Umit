@@ -1,0 +1,26 @@
+.course{
+    padding: 50px;
+
+    h1{
+        margin-bottom: 50px;
+    }
+
+    .lessons{
+        display: flex;
+
+        .lesson{
+            border-radius: 25px;
+            background: #c4c4c4;
+            height: 100px;
+            width: 100px;
+            padding: 25px;
+            margin: 0 20px;
+        }
+    
+        .add-lesson{
+            cursor: pointer;
+            background: white;
+            border: 2px solid #c4c4c4;
+        }
+    }
+}

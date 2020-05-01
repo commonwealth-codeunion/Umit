@@ -1,0 +1,66 @@
+.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 40px;
+    border-bottom: 1px solid #C4C4C4;
+
+    h1{
+        display: inline-block;
+
+    }
+    button{
+        float: right;
+        background: #0779E4;
+        border-radius: 360px;
+        font-weight: bold;
+        font-size: 15px;
+        padding: 20px;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+}
+
+.courses{
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+
+    .course{
+        padding: 50px;
+        margin: 20px;
+        border: 2px solid #F0F0F0;
+        border-radius: 30px;
+        position: relative;
+
+        h1{
+            color: #0779E4;
+            margin-bottom: 20px;
+        }
+        button{
+            background: white;
+            border: 2px solid #0779E4;
+            border-radius: 360px;
+            color: #0779E4;
+            padding: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            transition: .2s;
+            cursor: pointer;
+
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translate(-50%, 0);
+
+            &:hover{
+                background: #0779E4;
+                color: white;
+                transition: .2s;
+            }
+        }
+    }
+}

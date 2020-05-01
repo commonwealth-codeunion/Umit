@@ -1,0 +1,101 @@
+.left{grid-area: left}
+.right{grid-area: right}
+
+
+#lesson-editor{
+    display: none;
+}
+
+#editor{
+    padding: 50px;
+
+    display: grid;
+    grid-template-areas: 
+    'left left right right right';
+    grid-gap: 20px;
+
+
+    h1{
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    p{
+        color: #adadad;
+        font-weight: bold;
+    }
+
+    #c-name, #c-description{
+        background-color: white;
+        border: 1px solid #c4c4c4;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        display: block;
+        color: #c4c4c4;
+        font-weight: lighter;
+        font-size: 18px;
+    }
+
+    #c-description{
+        max-width: 300px;
+        max-height: 250px;
+        min-height: 200px;
+        height: 200px;
+    }
+
+    button{
+        background: #0779E4;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 20px;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .lessons{
+        background-color: white;
+        border: 2px solid #f0f0f0;
+        padding: 35px;
+        border-radius: 30px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .lesson{
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 15px;
+            width: 190px;
+            height: 120px;
+            margin: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-sizing: border-box;
+            color: #c4c4c4;
+
+            span{
+                color: black;
+            }
+            p{
+                margin-top: 20px;
+            }
+        }
+
+        .add-lesson{
+            border: 3px solid #0779E4;
+            background: rgba(#0779E4, 5%);
+            text-align: center;
+            font-weight: lighter;
+            color: #0779E4;
+
+            .plus{
+                // border: 2px solid #0779E4;
+                // border-radius: 360px;
+                font-size: 30px;
+            }
+        }
+    }
+}

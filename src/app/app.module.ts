@@ -3,9 +3,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireModule } from "@angular/fire";
 
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgModule } from '@angular/core';
 
 import { RegisterComponent } from './auth/register/register.component';
@@ -22,6 +23,13 @@ import { environment } from "src/environments/environment";
 import { AdminComponent } from './admin/admin.component';
 import { SchoolsComponent } from './admin/schools/schools.component';
 import { AddComponent } from './admin/schools/add/add.component';
+import { CoursesComponent } from './courses/courses.component';
+import { AddCourseComponent } from './courses/add-course/add-course.component';
+import { CourseComponent } from './courses/course/course.component';
+import { AddLessonComponent } from './courses/add-lesson/add-lesson.component';
+import { LessonComponent } from './courses/lesson/lesson.component';
+import { CoursesListComponent } from './courses/courses-list/courses-list.component';
+import { CourseService } from './services/course.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +43,16 @@ import { AddComponent } from './admin/schools/add/add.component';
     AdminComponent,
     SchoolsComponent,
     AddComponent,
+    CoursesComponent,
+    AddCourseComponent,
+    CourseComponent,
+    AddLessonComponent,
+    LessonComponent,
+    CoursesListComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
@@ -47,7 +62,7 @@ import { AddComponent } from './admin/schools/add/add.component';
   ],
   providers: [
     AuthGuard,
-    AdminGuard
+    AdminGuard,
   ],
   bootstrap: [AppComponent]
 })

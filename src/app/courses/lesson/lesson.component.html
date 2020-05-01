@@ -1,0 +1,19 @@
+<div class="lesson">
+    <h3>Урок {{ index+1 }}.</h3>
+    <h1 class="title">Тема: {{ lesson.subject }}</h1>
+
+    <button (click)="__FunctionSlide(false)">prev</button>
+    <button (click)="__FunctionSlide(true)">next</button>
+    <div class="blocks">
+        <div class="block" *ngFor="let block of lesson.blocks">
+            <!-- <p>{{ block.type }}</p> -->
+            <div *ngIf="block.type == 'youtube' ">
+                12345
+            </div>
+            <div *ngIf="block.type == 'html' ">
+                <p [innerHtml]="block.content"></p>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,8 +1,9 @@
-export interface User {
-    uid: string;
+
+
+export class User{
+    firstName: string;
+    lastName: string;
     email: string;
-    photoURL?: string;
-    displayName?: string;
-    myCustomData?: string;
-    role?: string;
-  }
+    role: string;
+    courses: Array<any>;
+}
