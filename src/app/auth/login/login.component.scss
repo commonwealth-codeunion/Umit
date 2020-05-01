@@ -11,15 +11,6 @@
     border: none;
   }
   
-  .left-bg {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    background-image: url("/assets/images/img-01.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
   .top-right {
     position: absolute;
     top: 0;
@@ -41,24 +32,6 @@
     transform: translate(-60%, -50%);
   }
   
-  .limiter {
-    width: 50%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    overflow: auto;
-    background-color: white;
-    height: 100%;
-    /* padding: 40px; */
-  }
-  
-  .limiter .content {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    // padding: 40px;
-  }
-  
   .login-form {
     margin-bottom: 50px;
   }
@@ -67,6 +40,13 @@
     margin: 0;
     width: 50%;
     position: relative;
+  }
+
+  .limiter .content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 40px 0;
   }
   
   .login-form-title {
@@ -221,10 +201,6 @@
     }
   }
   @media (max-width: 1000px) {
-    .limiter {
-      width: 100%;
-    }
-  
     .login-form {
       width: 50%;
       margin-top: 30px;
@@ -285,9 +261,5 @@
   
     .footer {
       height: 70px;
-    }
-  
-    .limiter .content {
-      height: 120%;
     }
   }

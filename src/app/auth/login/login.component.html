@@ -1,32 +1,29 @@
-<div class="left-bg"></div>
-<div class="limiter">
-	<div class="content">
-		<span class="login-form-title">
-			Вход в систему
-		</span>
-		<div class="form">
-			<form class="login-form" #userLogForm="ngForm" (ngSubmit)="login(userLogForm)">
-				<div class="error" *ngIf="authError">
-					<p>{{  authError?.message }}</p>
-				</div>
-				<input class="input" ngModel name="email" #email="ngModel" type="email" placeholder="Логин" >
-				<input class="input" ngModel name="password" #password="ngModel" type="password" placeholder="Пароль">
-				
-				<div class="form-btn">
-					<button class="btn" type="submit">
-						Войти
-					</button>
-					<button class="btn singup" (click)="register()">
-						Регистрация
-					</button>
-				</div>
-				<button class="btn btn-password">
-					Восстановить пароль
+<div class="content">
+	<span class="login-form-title">
+		Вход в систему
+	</span>
+	<div class="form">
+		<form class="login-form" #userLogForm="ngForm" (ngSubmit)="login(userLogForm)">
+			<div class="error" *ngIf="authError">
+				<p>{{  authError?.message }}</p>
+			</div>
+			<input class="input" ngModel name="email" #email="ngModel" type="email" placeholder="Логин" >
+			<input class="input" ngModel name="password" #password="ngModel" type="password" placeholder="Пароль">
+			
+			<div class="form-btn">
+				<button class="btn" type="submit">
+					Войти
 				</button>
-			</form>
-		</div>
-		<div class="footer">
-			<img class="footer-logo" src="/assets/images/logotype 1.png" alt="logo">
-		</div>
+				<button class="btn singup" (click)="register()">
+					Регистрация
+				</button>
+			</div>
+			<button class="btn btn-password">
+				Восстановить пароль
+			</button>
+		</form>
+	</div>
+	<div class="footer">
+		<img class="footer-logo" src="/assets/images/logotype 1.png" alt="logo">
 	</div>
 </div>

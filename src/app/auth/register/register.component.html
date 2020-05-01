@@ -1,22 +1,26 @@
-<form #userRegForm="ngForm" class="form" (ngSubmit)="createUser(userRegForm)">
-    <div class="error" *ngIf="authError">
-        <p>{{  authError?.message }}</p>
-    </div>
-    <div class="form__group">
-        <input ngModel name="firstName" #firstname="ngModel" type="text" placeholder="First name" class="form__input" />
-    </div>
-    
-    <div class="form__group">
-        <input ngModel name="lastName" #lastname="ngModel" type="text" placeholder="Last name" class="form__input" />
-    </div> 
-
-    <div class="form__group">
-        <input ngModel name="email" #email="ngModel" type="email" placeholder="Email" class="form__input" />
-    </div>
-    
-    <div class="form__group">
-        <input ngModel name="password" #password="ngModel" type="password" placeholder="Password" class="form__input" />
-    </div>
-    
-    <button class="btn" type="submit">Register</button>
-</form>
+<div class="content">
+	<span class="login-form-title">
+		Регистрация
+	</span>
+	<div class="form">
+		<form class="login-form" #userLogForm="ngForm" (ngSubmit)="login(userLogForm)">
+			<div class="error" *ngIf="authError">
+				<p>{{  authError?.message }}</p>
+			</div>
+			<input class="input" ngModel name="email" #email="ngModel" type="email" placeholder="Логин" >
+			<input class="input" ngModel name="password" #password="ngModel" type="password" placeholder="Пароль">
+			
+			<div class="form-btn">
+				<button class="btn singup" type="submit">
+					Зарегистрироваться
+				</button>
+				<button class="btn" (click)="register()">
+					Войти
+				</button>
+			</div>
+		</form>
+	</div>
+	<div class="footer">
+		<img class="footer-logo" src="/assets/images/logotype 1.png" alt="logo">
+	</div>
+</div>
