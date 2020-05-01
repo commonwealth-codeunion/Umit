@@ -3,7 +3,7 @@
 		Регистрация
 	</span>
 	<div class="form">
-		<form class="login-form" #userLogForm="ngForm" (ngSubmit)="login(userLogForm)">
+		<form class="login-form" #userLogForm="ngForm" (ngSubmit)="signup(userLogForm)">
 			<div class="error" *ngIf="authError">
 				<p>{{  authError?.message }}</p>
 			</div>

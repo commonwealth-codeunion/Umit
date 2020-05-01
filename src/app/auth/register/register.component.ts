@@ -24,4 +24,13 @@ export class RegisterComponent implements OnInit {
     console.log(frm.form.value);
     this.auth.createUser(frm.form.value);
   }
+
+  signup(q){
+    console.log(q);
+  }
+
+  register(){
+    console.log('hi');
+    
+  }
 }
