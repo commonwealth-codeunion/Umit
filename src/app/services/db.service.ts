@@ -32,12 +32,9 @@ export class DbService {
   }
 
   addCourse(course){
-    return new Promise<any>((resolve, reject) =>{
-      this.firestore
+    return this.firestore
           .collection("Courses")
-          .add(course)
-          .then(res => {}, err => reject(err));
-    });
+          .add(course);
   }
 
 }

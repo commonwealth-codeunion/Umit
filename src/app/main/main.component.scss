@@ -1,0 +1,34 @@
+header{
+    border-bottom: 1px solid #F0F0F0 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    img{
+        margin: 0 30px;
+    }
+    nav{
+        display: flex;
+        justify-content: space-around;
+
+        a{
+            color: #c4c4c4;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0 20px;
+        }
+
+        .link-active{
+            color: black;
+        }
+
+        p{
+            margin: 20px;
+            font-weight: bold;
+        }
+    }
+}
+
+.content{
+    padding: 20px;
+}

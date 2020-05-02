@@ -1,3 +1,5 @@
+@import '../auth.component';
+  
   img {
     user-select: none;
   }
@@ -9,12 +11,6 @@
   button {
     cursor: pointer;
     border: none;
-  }
-  
-  .top-right {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 400px);
   }
   
   .bottom-left {

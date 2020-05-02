@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './main/home/home.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthGuard } from './guard/role/auth.guard';
 import { SecretComponent } from './secret/secret.component';
@@ -17,16 +17,74 @@ import { LessonComponent } from './courses/lesson/lesson.component';
 import { AddLessonComponent } from './courses/add-lesson/add-lesson.component';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { CourseComponent } from './courses/course/course.component';
+import { LoginGuard } from './guard/role/login.guard';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: MainComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'courses',
+        component: CoursesComponent,
+        canActivate: [AuthGuard],
+        children: [
+          {
+            path: '',
+            redirectTo: 'list',
+            pathMatch: 'prefix'
+          },
+          {
+            path: 'list',
+            component: CoursesListComponent,
+            data: {animation: 'listPage'}
+          },
+          {
+            path: 'add',
+            component: AddCourseComponent,
+            canActivate: [AdminGuard],
+            data: {animation: 'addPage'}
+          },
+          {
+            path: 'add-lesson',
+            component: AddLessonComponent,
+            data: {animation: 'lessonAddPage'}
+          },
+          {
+            path: ':dog',
+            children: [
+              {
+                path: '',
+                component: CourseComponent,
+              },
+              {
+                path: 'read/:lessonId',
+                component: LessonComponent
+              },
+              {
+                path: 'add-lesson',
+                component: AddLessonComponent
+              },
+            ]
+          }
+        ]
+      },
+    ]
+  },
+  {
+    path: 'lending',
     component: LendingComponent,
   },
   {
     path: 'auth',
     component: AuthComponent,
-    canActivate: [AuthGuard],
+    canActivate: [LoginGuard],
     children: [
       {
         path: '',
@@ -44,56 +102,6 @@ const routes: Routes = [
             path: 'singup',
             component: RegisterComponent
           }
-        ]
-      }
-    ]
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'courses',
-    component: CoursesComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: '',
-        redirectTo: 'list',
-        pathMatch: 'prefix'
-      },
-      {
-        path: 'list',
-        component: CoursesListComponent,
-        data: {animation: 'listPage'}
-      },
-      {
-        path: 'add',
-        component: AddCourseComponent,
-        canActivate: [AdminGuard],
-        data: {animation: 'addPage'}
-      },
-      {
-        path: 'add-lesson',
-        component: AddLessonComponent,
-        data: {animation: 'lessonAddPage'}
-      },
-      {
-        path: ':dog',
-        children: [
-          {
-            path: '',
-            component: CourseComponent,
-          },
-          {
-            path: 'read/:lessonId',
-            component: LessonComponent
-          },
-          {
-            path: 'add-lesson',
-            component: AddLessonComponent
-          },
         ]
       }
     ]

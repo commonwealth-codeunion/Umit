@@ -3,12 +3,28 @@
 		Вход в систему
 	</span>
 	<div class="form">
-		<form class="login-form" #userLogForm="ngForm" (ngSubmit)="login(userLogForm)">
-			<div class="error" *ngIf="authError">
-				<p>{{  authError?.message }}</p>
+		<form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+			<div class="text-danger" *ngIf="authError && submitted">
+				<p>{{  authError }}</p>
 			</div>
-			<input class="input" ngModel name="email" #email="ngModel" type="email" placeholder="Логин" >
-			<input class="input" ngModel name="password" #password="ngModel" type="password" placeholder="Пароль">
+			<label>
+				<span class="text-danger"
+                    *ngIf="(email.touched || submitted) && email.errors?.required">
+                    Почта обязательна
+				</span>
+                <span class="text-danger"
+                    *ngIf="email.touched && email.errors?.email">
+                    Некорректный формат почты
+                </span>
+				<input class="input" name="email" formControlName="email" type="email" placeholder="Логин" >
+			</label>
+			<label>
+                <span class="text-danger"
+                    *ngIf="(password.touched || submitted) && password.errors?.required">
+                    Пароль обязателен.
+                </span>
+				<input class="input"  name="password" formControlName="password" type="password" placeholder="Пароль">
+			</label>
 			
 			<div class="form-btn">
 				<button class="btn" type="submit">

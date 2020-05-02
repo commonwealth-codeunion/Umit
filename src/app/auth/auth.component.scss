@@ -27,6 +27,19 @@
     padding: 40px 0;
   }
 
+  .text-danger{
+    color: red;
+    font-weight: bold;
+    background-color: white;
+    position: absolute;
+    left: 30px;
+    top: -32px;
+  }
+
+  label{
+      position: relative;
+  }
+
   @media (max-width: 1000px) {
     .limiter {
       width: 100%;

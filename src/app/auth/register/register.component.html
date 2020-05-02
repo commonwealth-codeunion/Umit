@@ -3,21 +3,63 @@
 		Регистрация
 	</span>
 	<div class="form">
-		<form class="login-form" #userLogForm="ngForm" (ngSubmit)="signup(userLogForm)">
+		<form class="login-form" [formGroup]="registerForm"(ngSubmit)="signup(registerForm.value)">
 			<div class="error" *ngIf="authError">
 				<p>{{  authError?.message }}</p>
-			</div>
-			<input class="input" ngModel name="email" #email="ngModel" type="email" placeholder="Логин" >
-			<input class="input" ngModel name="password" #password="ngModel" type="password" placeholder="Пароль">
+            </div>
+
+            <label>
+                <span class="text-danger"
+                *ngIf="(name.touched || submitted) && name.errors?.required">
+                    Имя обязательно.
+                </span>
+                <input class="input"  formControlName="name" name="name"  type="text" placeholder="ФИО" >
+            </label>
+
+            <label>
+                <span class="text-danger"
+                    *ngIf="(email.touched || submitted) && email.errors?.required">
+                    Почта обязательна
+                </span>
+                <span class="text-danger"
+                    *ngIf="email.touched && email.errors?.email">
+                    Введите корректную почту
+                </span>
+                <input class="input " formControlName="email" name="email"  type="email" placeholder="Почта" >
+            </label>
+
+            <label>
+                <span class="text-danger"
+                    *ngIf="(password.touched || submitted) && password.errors?.required">
+                    Пароль обязателен.
+                </span>
+                <span class="text-danger"
+                    *ngIf="password.touched && password.errors?.invalidPassword">
+                    Пароль должен содержать минимум 8 символов
+                </span>
+                <input class="input"  formControlName="password" name="password" type="password" placeholder="Пароль">
+            </label>
+            <label>
+                <span class="text-danger"
+                    *ngIf="(password2.touched || submitted)&& password2.errors?.required">
+                   Подтвердите пароль
+                </span>
+                <span class="text-danger"
+                    *ngIf="password2.touched && password2.errors?.passwordMismatch">
+                    Пароли не совпадают
+                </span>
+                <input class="input"  formControlName="password2" name="password2" type="password" placeholder="Повторите пароль">
+            </label>
 			
 			<div class="form-btn">
 				<button class="btn singup" type="submit">
 					Зарегистрироваться
 				</button>
-				<button class="btn" (click)="register()">
+				<button class="btn" (click)="login()">
 					Войти
 				</button>
-			</div>
+            </div>
+            {{ 'VALID: '+registerForm.valid }}
 		</form>
 	</div>
 	<div class="footer">

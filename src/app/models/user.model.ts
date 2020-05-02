@@ -1,9 +1,24 @@
+import { Course } from './course.model';
 
 
-export class User{
+export class User implements firebase.UserInfo {
+    uid: string;
     firstName: string;
     lastName: string;
     email: string;
     role: string;
-    courses: Array<any>;
+    displayName: string;
+    courses: UserCourse[];
+    phoneNumber: string;
+    photoURL: string;
+    providerId: string;
+
+    constructor(){
+        this.displayName = this.firstName + ' ' + this.lastName;
+    }
+}
+
+class UserCourse extends Course{
+    lastLesson = 0;
+    complete = false;
 }

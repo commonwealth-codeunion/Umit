@@ -14,7 +14,7 @@ import { LendingComponent } from './lending/lending.component';
 import { SecretComponent } from './secret/secret.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthComponent } from './auth/auth.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './main/home/home.component';
 import { AppComponent } from './app.component';
 
 import { AdminGuard } from './guard/role/admin.guard';
@@ -30,6 +30,7 @@ import { AddLessonComponent } from './courses/add-lesson/add-lesson.component';
 import { LessonComponent } from './courses/lesson/lesson.component';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { CourseService } from './services/course.service';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { CourseService } from './services/course.service';
     AddLessonComponent,
     LessonComponent,
     CoursesListComponent,
+    MainComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

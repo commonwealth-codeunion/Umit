@@ -1,0 +1,12 @@
+<header>
+    <img src="/assets/images/logo.png" alt="">
+    <nav>
+        <a [routerLink]="['/']"        routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}">Главная</a>
+        <a [routerLink]="['/courses']" routerLinkActive="link-active">Курсы</a>
+        <a [routerLink]="['/options']" routerLinkActive="link-active">Настройки</a>
+    </nav>
+    <img src="/assets//images/avatar.png" alt="">
+</header>
+<div class="content" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>

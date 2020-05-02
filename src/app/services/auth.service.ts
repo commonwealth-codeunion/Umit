@@ -17,6 +17,7 @@ export class AuthService {
 
   user$: Observable<User>;
   newUser: User;
+
   constructor(
     private Auth: AngularFireAuth,
     private db:   AngularFirestore,
@@ -37,13 +38,13 @@ export class AuthService {
     this.Auth.signInWithEmailAndPassword(email, password)
       .catch(err => this.eventAuthError.next(err))
       .then(user => {
-        if(user) this.router.navigate(['/home'])
+        if(user) this.router.navigate(['/'])
       })
   }
 
-  getUserState(){
-    return this.Auth.authState;
-  }
+  // getUserState(){
+  //   return this.Auth.authState;
+  // }
 
   createUser(user){
     this.newUser = user;
@@ -73,7 +74,8 @@ export class AuthService {
   }
 
   async logout(){
+    console.log('logout');
     await this.Auth.signOut();
-    this.router.navigate(['/'])
+    this.router.navigate(['/auth'])
   }
 }

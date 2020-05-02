@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { DbService } from '../services/db.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-secret',
@@ -8,7 +9,7 @@ import { DbService } from '../services/db.service';
   styleUrls: ['./secret.component.scss']
 })
 export class SecretComponent implements OnInit {
-  user: firebase.User;
+  user: User;
   users;
 
   constructor(
@@ -17,7 +18,7 @@ export class SecretComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.auth.getUserState()
+    this.auth.user$
       .subscribe(user => {
         this.user = user;
       });

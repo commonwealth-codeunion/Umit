@@ -19,10 +19,6 @@ export class LendingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.auth.getUserState()
-      .subscribe(user => {
-        this.user$ = user;
-    });
   }
 
   login(){

@@ -4,6 +4,8 @@ import { DbService } from '../../services/db.service';
 import { Router } from '@angular/router';
 import { CourseService } from '../../services/course.service';
 import { BehaviorSubject } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-add-course',
@@ -11,6 +13,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./add-course.component.scss']
 })
 export class AddCourseComponent implements OnInit, OnDestroy{
+  user: User;
   lessonEdit = false;
   lesson = this.fb.group({
     subject: [''],
@@ -31,7 +34,8 @@ export class AddCourseComponent implements OnInit, OnDestroy{
     private fb: FormBuilder,
     private db: DbService,
     private cs: CourseService,
-    private router: Router
+    private router: Router,
+    private auth: AuthService,
   ) { }
 
   // courseForm: FormGroup;
@@ -41,6 +45,12 @@ export class AddCourseComponent implements OnInit, OnDestroy{
     // this.cs.coursEdit.subscribe(course => this.courseForm = course);
     // console.log(this.courseForm.value);
     console.log('Add-course Init!');
+    this.auth.user$
+      .subscribe(user => {
+        console.log(user);
+        
+        this.user = user;
+      })
   }
 
   ngOnDestroy(){
@@ -83,12 +93,19 @@ export class AddCourseComponent implements OnInit, OnDestroy{
   }
 
   onSubmit(){
-    console.log(this.courseForm.value);
-    
-    this.db.addCourse(this.courseForm.value)
-      .then(() => {
-        this.router.navigate(['courses/list'])
-      })
-  }
+      const course = {
+        ...this.courseForm.value,
+        ...{
+          author: this.user.uid
+        }
+      }
+      console.log(this.user);
+      
+      this.db.addCourse(course)
+        .catch(err => console.error(err))
+        .then(() => {
+          this.router.navigate(['courses/list'])
+        })
+    }
 
 }

@@ -1,3 +1,5 @@
+@import '../auth.component';
+
 img {
     user-select: none;
   }
@@ -57,7 +59,7 @@ img {
     line-height: 1.5;
     color: #666666;
     width: calc(100% - 60px);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background: none;
     border: 2px solid #C4C4C4;
     height: 67px;
@@ -65,7 +67,7 @@ img {
     padding: 0 30px;
     outline: none;
   }
-  
+
   .form {
     height: calc(100% - 114px);
     width: 100%;
@@ -81,7 +83,7 @@ img {
     position: relative;
     padding: 40px 0;
   }
-  
+
   .form-btn {
     width: 100%;
     display: flex;
@@ -91,15 +93,6 @@ img {
     margin-bottom: 60px;
   }
   
-  .form-btn::after {
-    content: "";
-    height: 2px;
-    width: 30%;
-    background-color: #C4C4C4;
-    position: absolute;
-    bottom: -50px;
-    left: 35%;
-  }
   
   .btn {
     font-family: Montserrat-Bold;

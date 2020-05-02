@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DbService } from '../../services/db.service';
 import { CourseService } from '../../services/course.service';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-course',
@@ -9,6 +11,7 @@ import { CourseService } from '../../services/course.service';
   styleUrls: ['./course.component.scss']
 })
 export class CourseComponent implements OnInit {
+  user: User;
   course;
 
   constructor(
@@ -16,6 +19,7 @@ export class CourseComponent implements OnInit {
     private router: Router,
     private db: DbService,
     private cs: CourseService,
+    private auth: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +29,10 @@ export class CourseComponent implements OnInit {
     this.cs.getCourse(route)
       .subscribe(course => {
         this.course = course.data();   
+      })
+    this.auth.user$
+      .subscribe(user => {
+        this.user = user;
       })
   }
 

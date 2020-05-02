@@ -1,0 +1,42 @@
+<div class="article">
+    <div class="welcome">
+        <h1>Саламалейкум, {{ user.firstName }}!</h1>
+        <p>По жизни ты {{ user.role }}</p>
+    </div>
+    <div class="course">
+        <h4>Текущие курсы</h4>
+        <div class="defined-course" *ngFor="let course of user.courses">
+            <h4 class="title-of-course">
+                {{ course.name }}
+            </h4>
+            <p>{{ course.lastLesson + '/' + (course.lessons.length+1) }}</p>
+        </div>
+    </div>
+    <div class="course">
+        <h4>Рекомендованные курсы</h4>
+        <div class="defined-course">
+            <h4 class="title-of-course">
+                Курс по поеданию хачапури
+            </h4>
+            <p>Открыть</p>
+        </div>
+    </div>
+    <div class="course">
+        <h4>Пройденные курсы</h4>
+        <div class="defined-course">
+            <h4 class="title-of-course">
+                Курс по поеданию хачапури
+            </h4>
+            <p>Отлично</p>
+        </div>
+    </div>
+    <div class="course">
+        <h4>Мои курсы</h4>
+        <div class="defined-course">
+            <h4 class="title-of-course">
+                Курс по поеданию хачапури
+            </h4>
+            <p>100 студентов</p>
+        </div>
+    </div>
+</div>
