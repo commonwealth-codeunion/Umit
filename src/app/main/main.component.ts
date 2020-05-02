@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimation } from '../animations';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -12,12 +13,18 @@ import { slideInAnimation } from '../animations';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private auth: AuthService,
+  ) { }
 
   ngOnInit(): void {
   }
 
   
+  logout(){
+    this.auth.logout();
+  }
+
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }

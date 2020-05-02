@@ -5,7 +5,7 @@
         <a [routerLink]="['/courses']" routerLinkActive="link-active">Курсы</a>
         <a [routerLink]="['/options']" routerLinkActive="link-active">Настройки</a>
     </nav>
-    <img src="/assets//images/avatar.png" alt="">
+    <img src="/assets/images/avatar.png" alt="" (click)="logout()">
 </header>
 <div class="content" [@routeAnimations]="prepareRoute(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>

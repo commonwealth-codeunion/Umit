@@ -25,10 +25,6 @@ export class HomeComponent implements OnInit {
         
       });
   }
-  
-  logout(){
-    this.auth.logout();
-  }
 
   myFunction() {
     var x = document.getElementById("navBar");
