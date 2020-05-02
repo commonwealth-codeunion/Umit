@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormArray } from '@angular/forms';
 import { DbService } from '../../services/db.service';
 import { Router } from '@angular/router';
 import { CourseService } from '../../services/course.service';
@@ -15,20 +15,18 @@ import { User } from '../../models/user.model';
 export class AddCourseComponent implements OnInit, OnDestroy{
   user: User;
   lessonEdit = false;
-  lesson = this.fb.group({
-    subject: [''],
-  }); 
-  currentLesson = new BehaviorSubject(this.lesson);
-  actualLesson = {
-    lessonIndex: -1,
-    lessonGroup: this.lesson
-  };
-  lessons = this.fb.array([]);
+  currentLesson$ = new BehaviorSubject(null);
   courseForm = this.fb.group({
     name: ['', Validators.required],
     description: [''], 
-    lessons: this.lessons
+    lessons: this.fb.array([])
   });
+  
+
+  get lessons(): FormArray{
+    return this.courseForm.get('lessons') as FormArray;
+  }
+  
 
   constructor(
     private fb: FormBuilder,
@@ -58,35 +56,52 @@ export class AddCourseComponent implements OnInit, OnDestroy{
     // this.cs.coursEdit.next(this.courseForm);
   }
 
-  addLesson(index = -1){
-    // this.router.navigate(['courses/add-lesson'],  { skipLocationChange: true })
-    let lessons = this.lessons.controls;
-    if(index >= 0 && lessons[index]){
-      this.currentLesson.next(lessons[index] as FormGroup)
-      this.actualLesson.lessonIndex = index
-    } 
+  saveLesson(lesson: FormGroup){
+    // this.currentLesson$.next(this.lesson);
+    // this.lessons.push(this.lesson);
+    this.lessonEdit = false;
+
+    console.log(this.courseForm.value);
+  }
+
+  editLesson(index: number){
+    this.currentLesson$.next(this.lessons.controls[index]);
     this.lessonEdit = true;
   }
 
-  saveLesson(lesson){
-    console.log('Index: ', lesson.lessonIndex);
-    console.log('Value: ', lesson.lessonGroup);
-    
-    let newLesson = this.fb.group({
-      subject: lesson.lessonGroup.subject
-    });
-    if(lesson.lessonIndex >= 0)
-      this.lessons.setControl(lesson.lessonIndex, newLesson);
-    else
-      this.lessons.push(newLesson);
-    
-
-    console.log(this.lessons.value);
-    this.lessonEdit = false;
-
-    this.actualLesson.lessonIndex = -1;
-    this.currentLesson.next(this.lesson);
+  addLesson(){
+    // this.router.navigate(['courses/add-lesson'],  { skipLocationChange: true })
+    this.lessons.push(
+      this.fb.group({
+        subject: [''],
+        blocks: this.fb.array([
+          this.fb.group({
+            name: ['', Validators.required],
+            type: ['html', Validators.required],
+            content: ['']
+          })
+        ])
+    }));
+    this.currentLesson$.next(this.lessons.controls[this.lessons.controls.length-1]);
+    this.lessonEdit = true;
   }
+
+  // saveLesson(lesson: FormGroup, index: number = -1){
+  //   console.log('Index: ', index);
+  //   console.log('Value: ', lesson);
+
+  //   if(index >= 0)
+  //     this.lessons.setControl(index, lesson);
+  //   else
+  //     this.lessons.push(lesson);
+    
+
+  //   console.log(this.lessons.value);
+  //   this.lessonEdit = false;
+
+  //   this.actualLesson.lessonIndex = -1;
+  //   this.currentLesson$.next(this.lesson);
+  // }
 
   openLesson(index: number){
 

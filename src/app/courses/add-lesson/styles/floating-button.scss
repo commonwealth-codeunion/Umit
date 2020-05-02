@@ -1,0 +1,49 @@
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(7, 121, 228, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+    }
+}
+
+.floating-button {
+    position: fixed;
+    right: 0;
+    margin: 20px 60px;
+    bottom: 0;
+}
+
+.floating-button .submit,
+.floating-button .message {
+    height: 50px;
+    padding: 15px;
+    margin: 0 40px;
+    display: inline-block;
+    background-color: #0779E4;
+}
+
+.floating-button .submit {
+    border-radius: 60px;
+    padding: 15px 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.floating-button .submit a {
+    color: white;
+}
+
+.floating-button .message {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: center;
+    background: #0779E4;
+    border-radius: 50%;
+    animation: shadow-pulse 1s infinite;
+}
+
+.floating-button .message img {
+    height: 18px;
+}

@@ -12,7 +12,7 @@ import { User } from '../models/user.model';
 })
 export class AuthService {
 
-  private eventAuthError  = new BehaviorSubject<string>("");
+  private eventAuthError  = new BehaviorSubject<string>("Someting wrong");
           eventAuthError$ = this.eventAuthError.asObservable();
 
   user$: Observable<User>;
@@ -36,7 +36,7 @@ export class AuthService {
 
   login(email: string, password: string){
     this.Auth.signInWithEmailAndPassword(email, password)
-      .catch(err => this.eventAuthError.next(err))
+      .catch(err => this.eventAuthError.next(err.code))
       .then(user => {
         if(user) this.router.navigate(['/'])
       })

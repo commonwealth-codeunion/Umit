@@ -1,0 +1,27 @@
+@import './selects/select-type-bloc';
+@import './selects/select-exist-test';
+.select {
+    position: relative;
+}
+
+.select.open .options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.select-arrow {
+    position: relative;
+    height: 15px;
+    width: 15px;
+}
+
+.select-arrow::before,
+.select-arrow::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 0.15rem;
+    height: 100%;
+    transition: all 0.5s; 
+}

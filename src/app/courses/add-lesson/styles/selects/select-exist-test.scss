@@ -1,0 +1,80 @@
+.select-exist-test {
+    position: relative;
+    user-select: none;
+    margin-top: 20px;
+    max-width: 350px;
+}
+
+.select-exist-test .select-trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    font-size: 18px;
+    color: #C4C4C4;
+    line-height: 60px;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #C4C4C4;
+    border-radius: 15px;
+}
+
+.select-exist-test .options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #C4C4C4;
+    background: #fff;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.select-exist-test .option {
+    position: relative;
+    display: block;
+    padding: 0 22px 0 22px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #C4C4C4;
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.select-exist-test .option:hover {
+    cursor: pointer;
+    background-color: #b2b2b2;
+}
+
+.select-exist-test .option.selected {
+    color: #ffffff;
+    background-color: #C4C4C4;
+}
+
+.select-exist-test .select-arrow::before {
+    left: -5px;
+    transform: rotate(-45deg);
+    background-color: #C4C4C4;
+}
+
+.select-exist-test .select-arrow::after {
+    left: 5px;
+    transform: rotate(45deg);
+    background-color: #C4C4C4;
+}
+
+.select-exist-test .open .select-arrow::before {
+    left: -5px;
+    transform: rotate(45deg);
+}
+
+.select-exist-test .open .select-arrow::after {
+    left: 5px;
+    transform: rotate(-45deg);
+}

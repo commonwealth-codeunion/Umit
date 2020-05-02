@@ -5,4 +5,5 @@ export class Course{
     lessons: Lesson[];
     name: string;
     description: string;
+    author: string;
 }

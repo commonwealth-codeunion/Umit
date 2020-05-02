@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактор уроков</title>
+    <link rel="stylesheet" href="styles/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid">
+            <div class="aside">
+                <div class="control-panel">
+                    <h2><b>Добавление урока</b></h2>
+                    <div class="current-course">
+                        <div class="text">
+                            <p>Базовый раздел теоритиче...</p>
+                        </div>
+                        <div class="icon">
+                            <img src="img/icons/done.png" alt="">
+                        </div>
+                    </div>
+                    <div class="controls control-text active">
+                        <div class="icon">
+                            <img src="img/icons/text.png" alt="Добавить блок с информацией">
+                        </div>
+                        <div class="title">Введение</div>
+                    </div>
+                    <div class="controls control-video">
+                        <div class="icon">
+                            <img src="img/icons/videocam.png" alt="Добавить блок с видео">
+                        </div>
+                        <div class="title">Эксперимент</div>
+                    </div>
+                    <div class="controls control-test">
+                        <div class="icon">
+                            <img src="img/icons/file_copy.png" alt="Добавить блок тестирования">
+                        </div>
+                        <div class="title">Лабораторная работа</div>
+                    </div>
+                    <div class="controls control-add">
+                        <div class="icon">
+                            <img src="img/icons/plus.png" alt="Добавить новый блок">
+                        </div>
+                        <div class="title">Добавить блок</div>
+                    </div>
+                </div>
+            </div>
+            <article>
+                <div class="editor">
+                    <div id="eg-royal-theme">
+                        Комментарии. Текст..
+                    </div>
+                    <div class="select-exist-test">
+                        <div class="select">
+                            <div class="select-trigger">
+                                <span>Выбрать ранее созданный тест</span>
+                                <div class="select-arrow"></div>
+                            </div>
+                            <div class="options">
+                                <option class="option selected" value="testNum">Тест {Номер}</option>
+                                <option class="option" value="testNum">Тест {Номер}</option>
+                                <option class="option" value="testNum">Тест {Номер}</option>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="select-type-bloc">
+                        <div class="select">
+                            <div class="select-trigger">
+                                <span>Текстовый блок</span>
+                                <div class="select-arrow"></div>
+                            </div>
+                            <div class="options">
+                                <option class="option selected top-outline" value="block">Текстовый блок</option>
+                                <option class="option" value="block">Видео блок</option>
+                                <option class="option bottom-outline" value="block">Файловый блок</option>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="floating-button">
+            <div class="submit">
+                <a href="#">Принять</a>
+            </div>
+            <div class="message">
+                <a href="#">
+                    <img src="img/icons/sms.png" alt="Обратиться в поддержку">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="js/select-type-bloc.js"></script>
+    <script type="text/javascript" src="js/select-exist-test.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
+    <script type="text/javascript">
+        new FroalaEditor('div#eg-royal-theme', {
+            theme: 'royal'
+        })
+    </script>
+</body>
+
+</html>
+
+</html>

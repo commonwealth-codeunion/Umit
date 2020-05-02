@@ -1,0 +1,87 @@
+.select-type-bloc {
+    margin: 200px 0 0 auto;
+    max-width: 250px;
+}
+
+.select-type-bloc .select-trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 24px;
+    color: #C4C4C4;
+    font-weight: bold;
+    line-height: 60px;
+    background: white;
+    cursor: pointer;
+}
+
+.select-type-bloc .options {
+    position: absolute;
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.05);
+    display: block;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.select-type-bloc .option {
+    position: relative;
+    display: block;
+    padding: 0 22px 0 22px;
+    font-size: 18px;
+    font-weight: 300;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.select-type-bloc .top-outline {
+    border-radius: 20px 20px 0 0;
+}
+
+.select-type-bloc .bottom-outline {
+    border-radius: 0 0 20px 20px;
+}
+
+.select-type-bloc .option:hover {
+    color: white;
+    cursor: pointer;
+    background-color: #0779E4;
+}
+
+.select-type-bloc .option.selected {
+    color: white;
+    background-color: #0779E4;
+}
+
+.select-type-bloc .select-arrow::before {
+    left: -5px;
+    transform: rotate(45deg);
+    background-color: #C4C4C4;
+}
+
+.select-type-bloc .select-arrow::after {
+    left: 5px;
+    transform: rotate(-45deg);
+    background-color: #C4C4C4;
+}
+
+.select-type-bloc .open .select-arrow::before {
+    left: -5px;
+    transform: rotate(-45deg);
+}
+
+.select-type-bloc .open .select-arrow::after {
+    left: 5px;
+    transform: rotate(45deg);
+}

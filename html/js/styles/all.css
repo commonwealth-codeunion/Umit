@@ -1,7 +1,7 @@
-@import './styles/editor';
-@import './styles/control-panel';
-@import './styles/select';
-@import './styles/floating-button';
+@import 'components/editor.css';
+@import 'components/control-panel.css';
+@import 'components/select.css';
+@import 'components/floating-button.css';
 @import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400&display=swap');
 *,
 *:after,

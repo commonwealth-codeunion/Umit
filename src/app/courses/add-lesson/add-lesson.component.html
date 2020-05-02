@@ -1,15 +1,78 @@
-<div class="left nav">
-    <h1>Добавление урока</h1>
-    <input type="text" placeholder="Тема урока">
-    <span class="input-status"></span>
-    <nav>   
-        <div>
-            <div class="icon"></div>
-            <p>Введение</p>
+<div class="container">
+    <div class="grid">
+        <div class="aside">
+            <div class="control-panel" [formGroup]="currentLesson">
+                <h2><b>Добавление урока</b></h2>
+                <div class="current-course" >
+                    <label>
+                        <span>Введите тему урока:</span>
+                        <input type="text" class="input" formControlName="subject">
+                    </label>
+                </div>
+                <div formArrayName="blocks">
+                    <div [class]=" 'controls control-text ' + ((currentBlock.value == i) ? 'active' : '')" *ngFor="let block of blocks.controls; index as i"  [formGroupName]="i" (click)="selectBlock(i)">
+                        <div class="icon">
+                            <div [class]="'img ' + block.value.type"></div> 
+                        </div>
+                        <div class="title" ><p>{{ block.value.name }}</p><input type="text" formControlName="name" class="input"  placeholder="Название блока"></div>
+                    </div>
+                </div>
+                <div class="controls control-add" (click)="pushBlock()">
+                    <div class="icon">
+                        <img src="/assets/images/icons/plus.png" alt="Добавить новый блок">
+                    </div>
+                    <div class="title">Добавить блок</div>
+                </div>
+                <pre>{{ currentLesson.value | json }}</pre>
+            </div>
         </div>
-    </nav>
+        <article>
+            <div class="editor">
+                <div id="eg-royal-theme">
+                    {{ blocks.value[currentBlock.value].content }}
+                </div>
+                <!-- <div class="select-exist-test">
+                    <div class="select">
+                        <div class="select-trigger">
+                            <span>Выбрать ранее созданный тест</span>
+                            <div class="select-arrow"></div>
+                        </div>
+                        <div class="options">
+                            <option class="option selected" value="testNum">Тест {Номер}</option>
+                            <option class="option" value="testNum">Тест {Номер}</option>
+                            <option class="option" value="testNum">Тест {Номер}</option>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="select-type-bloc" (click)="openSelect($event)">
+                    <div class="select">
+                        <div class="select-trigger">
+                            <span>{{ getType(blocks.value[currentBlock.value].type) }}</span>
+                            <div class="select-arrow"></div>
+                        </div>
+                        <div class="options">
+                            <option 
+                                [class]=" 'option ' + (i==0 ? 'top-outline ' : '') 
+                                                    + (i==types.length-1 ? 'bottom-outline ' : '') 
+                                                    + (type == blocks.value[currentBlock.value].type ? 'selected ' : '')" 
+                                value="block" *ngFor="let type of types; let i=index"
+                                (click)="chageType(type)">
+                                {{ getType(type) }}
+                            </option>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="floating-button">
+        <div class="submit" (click)="saveLesson()">
+            <a>Принять</a>
+        </div>
+        <div class="message">
+            <a href="#">
+                <img src="/assets/images/icons/sms.png" alt="Обратиться в поддержку">
+            </a>
+        </div>
+    </div>
 </div>
-<form [formGroup]="lesson" (ngSubmit)="saveLesson()">
-    <input type="text" formControlName="subject">
-    <button type="submit">Save</button>
-</form>
