@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.eventAuthError$.subscribe(data => {
-      switch(data){
+      switch(data.code){
         case 'auth/wrong-password':  
           this.authError = 'Неверный пароль';
         break;
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           this.authError = 'Слишком много попыток входа, попробуйте позже'
         break;
         default: 
-          this.authError = data;
+          this.authError = data.message;
       }
       console.log(data);
       
