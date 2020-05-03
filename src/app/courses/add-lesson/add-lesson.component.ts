@@ -5,11 +5,22 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { EventEmitter } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
   
+
+import  '../../../../node_modules/froala-editor/js/plugins/video.min';
+import  '../../../../node_modules/froala-editor/js/plugins/image.min';
+import  '../../../../node_modules/froala-editor/js/plugins/align.min';
+import  '../../../../node_modules/froala-editor/js/plugins/font_size.min';
+import  '../../../../node_modules/froala-editor/js/plugins/font_family.min';
+import  '../../../../node_modules/froala-editor/js/languages/ru';
+
 @Component({
   selector: 'app-add-lesson',
   templateUrl: './add-lesson.component.html',
   styleUrls: [
-    './add-lesson.component.scss' 
+    './add-lesson.component.scss',
+    '../../../../node_modules/froala-editor/css/plugins/image.min.css',
+    '../../../../node_modules/froala-editor/css/plugins/video.min.css',
+
   ]
 })
 export class AddLessonComponent implements OnInit {
@@ -36,11 +47,21 @@ export class AddLessonComponent implements OnInit {
     return this.currentLesson.get('blocks') as FormArray;
   }
 
-  public editorParams: Object = {
-    theme: 'dark',
-    charCounterCount: true,
-    imageUpload: true,
-    placeholder: 'qwerty'
+  editor(){
+    return {
+      language: 'ru',
+      charCounterCount: true,
+      imageUpload: true,
+      toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 
+      'fontFamily', 'fontSize', 'color', 'inlineClass', 'inlineStyle', 'paragraphStyle', 'lineHeight', '|', 
+      'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 
+      'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertFile', 'insertTable', '|', 
+      'emoticons', 'fontAwesome', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 
+      'print', 'getPDF', 'spellChecker', 'help', 'html', '|', 
+      'undo', 'redo'],
+      placeholderText: 'Введите текст',
+      heightMin: 100,
+    }
   }
 
   constructor(

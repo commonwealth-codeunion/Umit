@@ -33,7 +33,8 @@
               "./node_modules/froala-editor/css/froala_style.min.css"
             ],
             "scripts": [
-              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js",
+              "./node_modules/froala-editor/js/plugins/font_size.min.js"
             ]
           },
           "configurations": {
@@ -101,7 +102,8 @@
               "./node_modules/froala-editor/css/froala_style.min.css"
             ],
             "scripts": [
-              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js",
+              "./node_modules/froala-editor/js/plugins/font_size.min.js"
             ]
           }
         },
