@@ -25,7 +25,7 @@ export class AddLessonComponent implements OnInit {
     subject: [''],
     blocks: this.fb.array([
       this.fb.group({
-        name: ['', Validators.required],
+        name: ['', Validators.required], 
         type: ['', Validators.required],
         content: ['']
       })
@@ -34,6 +34,13 @@ export class AddLessonComponent implements OnInit {
 
   get blocks(): FormArray{
     return this.currentLesson.get('blocks') as FormArray;
+  }
+
+  public editorParams: Object = {
+    theme: 'dark',
+    charCounterCount: true,
+    imageUpload: true,
+    placeholder: 'qwerty'
   }
 
   constructor(

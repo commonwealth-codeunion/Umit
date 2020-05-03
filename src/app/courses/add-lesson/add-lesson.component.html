@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="grid">
+    <div class="grid" [formGroup]="currentLesson">
         <div class="aside">
-            <div class="control-panel" [formGroup]="currentLesson">
+            <div class="control-panel">
                 <h2><b>Добавление урока</b></h2>
                 <div class="current-course" >
                     <label>
@@ -28,8 +28,18 @@
         </div>
         <article>
             <div class="editor">
-                <div id="eg-royal-theme">
-                    {{ blocks.value[currentBlock.value].content }}
+                <div>
+                    <div formArrayName="blocks">
+                        <div *ngFor="let block of blocks.controls; index as i"  [formGroupName]="i" >
+                            <div *ngIf="currentBlock.value == i">
+                                <textarea *ngIf="block.value.type == 'html' " [froalaEditor]="editorParams" formControlName="content"></textarea>
+                                <div *ngIf="block.value.type == 'youtube'">
+                                    <textarea formControlName="comment">Комментарий...</textarea>
+                                    <button></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- <div class="select-exist-test">
                     <div class="select">

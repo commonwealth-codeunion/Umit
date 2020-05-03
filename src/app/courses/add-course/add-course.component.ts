@@ -108,12 +108,12 @@ export class AddCourseComponent implements OnInit, OnDestroy{
   }
 
   onSubmit(){
-      const course = {
-        ...this.courseForm.value,
-        ...{
-          author: this.user.uid
-        }
-      }
+      const course = 
+        this.courseForm.value;
+      //   ...{
+      //     author: this.user.uid
+      //   }
+      // }
       console.log(this.user);
       
       this.db.addCourse(course)
