@@ -18,6 +18,8 @@ export class MainComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log('Run main component!');
+    
   }
 
   

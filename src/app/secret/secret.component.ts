@@ -18,10 +18,10 @@ export class SecretComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.auth.user$
-      .subscribe(user => {
-        this.user = user;
-      });
+    // this.auth.user$
+    //   .subscribe(user => {
+    //     this.user = user;
+    //   });
     this.db.getUsers()
       .subscribe(users => {
         this.users = users;

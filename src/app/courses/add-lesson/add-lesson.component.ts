@@ -12,6 +12,7 @@ import  '../../../../node_modules/froala-editor/js/plugins/align.min';
 import  '../../../../node_modules/froala-editor/js/plugins/font_size.min';
 import  '../../../../node_modules/froala-editor/js/plugins/font_family.min';
 import  '../../../../node_modules/froala-editor/js/languages/ru';
+import  "../../../../node_modules/froala-editor/js/froala_editor.pkgd.min.js";
 
 @Component({
   selector: 'app-add-lesson',

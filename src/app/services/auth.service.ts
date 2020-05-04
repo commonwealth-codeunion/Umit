@@ -12,7 +12,7 @@ import { User } from '../models/user.model';
 })
 export class AuthService {
 
-  private eventAuthError  = new BehaviorSubject<string>("Someting wrong");
+  private eventAuthError  = new BehaviorSubject<string>(null);
           eventAuthError$ = this.eventAuthError.asObservable();
 
   user$: Observable<User>;
@@ -23,13 +23,14 @@ export class AuthService {
     private db:   AngularFirestore,
     private router: Router,
   ) { 
+    console.log('Run auth service!');
+    
     this.user$ = this.Auth.authState.pipe(
       switchMap(user => {
-        if (user) {
+        if (user)
           return this.db.doc<User>(`Users/${user.uid}`).valueChanges();
-        } else {
+        else
           return of(null);
-        }
       })
     )
   }
@@ -49,19 +50,23 @@ export class AuthService {
   createUser(user){
     this.newUser = user;
 
+    console.log('Upload new user: ', this.newUser);
+    
     this.Auth.createUserWithEmailAndPassword(user.email, user.password)
       .then( userCred => {
 
+        console.log(userCred);
+        
         userCred.user.updateProfile({
           displayName: user.firstName + ' ' + user.lastName
         });
 
         this.insertUserData(userCred)
           .then(() => {
-            this.router.navigate(['/secret']);
+            this.router.navigate(['/']);
           });
       }).catch(error =>
-          this.eventAuthError.next(error));
+          this.eventAuthError.next(error.code));
   }
 
   insertUserData(userCredentials: firebase.auth.UserCredential){
@@ -69,7 +74,7 @@ export class AuthService {
       email: this.newUser.email,
       firstName: this.newUser.firstName,
       lastName: this.newUser.lastName,
-      role: 'Admin'
+      role: 'User'
     })
   }
 

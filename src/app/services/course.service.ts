@@ -33,6 +33,8 @@ export class CourseService {
   }
 
   getCourse(cid){
+    console.log('load course...');
+    
     return this.firestore.collection("Courses").doc(cid).get();
   }
 

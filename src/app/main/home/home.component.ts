@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log('Run home component!');
+    
     this.auth.user$
       .subscribe(user => {
         this.user = user;

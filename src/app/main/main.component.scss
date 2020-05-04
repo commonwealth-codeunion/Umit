@@ -8,24 +8,36 @@ header{
         margin: 0 30px;
         cursor: pointer;
     }
+    .logo{
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid #c4c4c4;
+    }
     nav{
         display: flex;
         justify-content: space-around;
+        font-size: 18px;
+        font-weight: bold;
 
         a{
             color: #c4c4c4;
             text-decoration: none;
-            font-weight: bold;
-            padding: 0 20px;
+            cursor: pointer;
+            margin: 0 40px;
+            transition: .2s;
+
+            &:hover{
+                transform: scale(1.1);
+                transition: .2s;
+            }
         }
 
         .link-active{
             color: black;
-        }
-
-        p{
-            margin: 20px;
-            font-weight: bold;
+            transform: scale(1.2);
+            &:hover{
+                transform: scale(1.2);
+            }
         }
     }
 }

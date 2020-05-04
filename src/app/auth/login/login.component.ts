@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   authError: any;
   submitted = false;
+  loginLoad = false;
   loginForm = this.fb.group({
     email: ['', 
       [Validators.required,
@@ -33,7 +34,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.eventAuthError$.subscribe(err => {
-      switch(err){
+      if (err) {
+        this.loginLoad = false;
+        switch(err){
         case 'auth/wrong-password':  
           this.authError = 'Неверный пароль';
         break;
@@ -45,6 +48,7 @@ export class LoginComponent implements OnInit {
         break;
         default: 
           this.authError = "Произошла ошибка, попробуйте позже";
+        }
       }
       console.log(err);
       
@@ -53,8 +57,10 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.submitted = true;
+
     const user = this.loginForm.value;
     if (this.loginForm.valid) {
+      this.loginLoad = true;
       console.log('Login...');
       console.table(user);
       this.auth.login(user.email, user.password);

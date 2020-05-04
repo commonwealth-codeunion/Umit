@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DbService } from '../../services/db.service';
 import { CourseService } from '../../services/course.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-courses-list',
@@ -10,18 +11,25 @@ import { CourseService } from '../../services/course.service';
 })
 export class CoursesListComponent implements OnInit {
   courses;
+  user;
 
   constructor(
     private router: Router,
     private cs: CourseService,
-    private db: DbService
+    private db: DbService,
+    private auth: AuthService
   ) { }
 
   ngOnInit(): void {
     this.cs.getCourses()
       .subscribe(courses => {
           this.courses = courses;
+          console.log(courses);
+          
       })
+    this.auth.user$.subscribe(user => {
+      this.user = user;
+    });
   }
 
   addCourse(){

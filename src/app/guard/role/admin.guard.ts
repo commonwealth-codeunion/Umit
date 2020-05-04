@@ -18,17 +18,18 @@ export class AdminGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return this.auth.user$.pipe(
-        take(1),
-        tap(user => {
-          console.log(user);
-            if (!user || user.role != 'Admin') {
-              console.log('access denied')
-              this.router.navigate(['/home']);
-            }
-          }),
-        map(user => user && user.role == 'Admin')
-      )
+      // return this.auth.user$.pipe(
+      //   take(1),
+      //   tap(user => {
+      //     console.log(user);
+      //       if (!user || user.role != 'Admin') {
+      //         console.log('access denied')
+      //         this.router.navigate(['/home']);
+      //       }
+      //     }),
+      //   map(user => user && user.role == 'Admin')
+      // )
+      return true
   }
   
 }

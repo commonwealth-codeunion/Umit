@@ -1,6 +1,6 @@
 <div class="title">
     <h1>Список курсов</h1>
-    <button (click)="addCourse()">+ Добавить курс</button>
+    <button *ngIf="user" (click)="addCourse()">+ Добавить курс</button>
 </div>
 
 <div class="courses" >

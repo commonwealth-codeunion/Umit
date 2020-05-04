@@ -43,12 +43,12 @@ export class AddCourseComponent implements OnInit, OnDestroy{
     // this.cs.coursEdit.subscribe(course => this.courseForm = course);
     // console.log(this.courseForm.value);
     console.log('Add-course Init!');
-    this.auth.user$
-      .subscribe(user => {
-        console.log(user);
+    // this.auth.user$
+    //   .subscribe(user => {
+    //     console.log(user);
         
-        this.user = user;
-      })
+    //     this.user = user;
+    //   })
   }
 
   ngOnDestroy(){

@@ -3,6 +3,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFireModule } from "@angular/fire";
 
+import { AngularFireAuthGuard } from "@angular/fire/auth-guard";
+
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -68,6 +70,7 @@ import { MainComponent } from './main/main.component';
   providers: [
     AuthGuard,
     AdminGuard,
+    AngularFireAuthGuard,
   ],
   bootstrap: [AppComponent]
 })

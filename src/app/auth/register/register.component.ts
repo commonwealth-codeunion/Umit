@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
 
   authError: any;
   submitted = false;
+  load = false;
   registerForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', 
@@ -47,20 +48,33 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.eventAuthError$.subscribe(data => {
-      this.authError = data;
+      if(data){
+        console.log('Register error: ', data);
+        switch(data){
+          case 'auth/email-already-in-use':
+            this.authError = 'Пользователь с таким email адресом уже существует!'
+          break;
+          default:
+            this.authError = 'Произошла ошибка, попробуйте позже'
+        }
+        this.load = false;
+      }
     });
   }
 
-  createUser(frm) {
-    console.log(frm.form.value);
-    this.auth.createUser(frm.form.value);
+  createUser() {
+    let user = this.registerForm.value;
+    user.firstName = user.name.split(' ')[0];
+    user.lastName = user.name.split(' ')[1];
+    console.log(user);
+    this.auth.createUser(user);
   }
 
   signup(){
     this.submitted = true;
     if (this.registerForm.valid) {
-      alert('Form Submitted succesfully!!!\n Check the values in browser console.');
-      console.table(this.registerForm.value);
+      this.load = true;
+      this.createUser();
     }
   }
 

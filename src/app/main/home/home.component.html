@@ -1,9 +1,12 @@
-<div class="article">
+<div class="preloader" [class.hidden]="user">
+    <div class="loader"></div>
+</div>
+<div class="article" *ngIf="user">
     <div class="welcome">
         <h1>Саламалейкум, {{ user.firstName }}!</h1>
         <p>По жизни ты {{ user.role }}</p>
     </div>
-    <div class="course">
+    <div class="course" *ngIf="user.courses">
         <h4>Текущие курсы</h4>
         <div class="defined-course" *ngFor="let course of user.courses">
             <h4 class="title-of-course">

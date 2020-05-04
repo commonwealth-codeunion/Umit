@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, CanActivate } from '@angular/router';
+import { Routes, RouterModule, CanActivate, PreloadAllModules } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './main/home/home.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -19,21 +19,31 @@ import { CoursesListComponent } from './courses/courses-list/courses-list.compon
 import { CourseComponent } from './courses/course/course.component';
 import { LoginGuard } from './guard/role/login.guard';
 import { MainComponent } from './main/main.component';
+import { redirectUnauthorizedTo, canActivate, AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { AngularFireAuth } from '@angular/fire/auth';
+
+const redirectUnauthorizedToLanding = () => redirectUnauthorizedTo(['lending']);
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuard],
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,     
+        canActivate: [AngularFireAuthGuard],
+        data: {
+          authGuardPipe: redirectUnauthorizedToLanding
+        },
       },
       {
         path: 'courses',
-        component: CoursesComponent,
-        canActivate: [AuthGuard],
+        component: CoursesComponent,    
+        canActivate: [AngularFireAuthGuard],
+        data: {
+          authGuardPipe: redirectUnauthorizedToLanding
+        },
         children: [
           {
             path: '',
@@ -48,7 +58,7 @@ const routes: Routes = [
           {
             path: 'add',
             component: AddCourseComponent,
-            canActivate: [AdminGuard],
+            // canActivate: [AdminGuard],
             data: {animation: 'addPage'}
           },
           {
@@ -84,7 +94,7 @@ const routes: Routes = [
   {
     path: 'auth',
     component: AuthComponent,
-    canActivate: [LoginGuard],
+    // canActivate: [LoginGuard],
     children: [
       {
         path: '',
@@ -109,12 +119,12 @@ const routes: Routes = [
   {
     path: 'secret',
     component: SecretComponent,
-    canActivate: [AdminGuard],
+    // canActivate: [AdminGuard],
   },
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [AdminGuard],
+    // canActivate: [AdminGuard],
     children: [
       {
         path: '',
@@ -148,7 +158,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

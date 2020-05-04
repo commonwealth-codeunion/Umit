@@ -1,4 +1,17 @@
 
+  img {
+    user-select: none;
+  }
+
+  input, button{
+    outline: none!important; 
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+  }
+  
   
   .left-bg {
     width: 50%;
@@ -17,11 +30,40 @@
     overflow: auto;
     background-color: white;
     height: 100%;
-    /* padding: 40px; */
+    font-family: Gilroy;
   }
   
   .limiter .content {
     height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 40px 0;
+  }
+  
+  .form-title {
+    margin: 0 40px 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    color: #08447B;
+  }
+
+  .form {
+    margin-bottom: 50px;
+  }
+  
+  .form {
+    margin: 0;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .content {
+    height: calc(100% - 80px);
     width: 100%;
     position: relative;
     padding: 40px 0;
@@ -31,15 +73,211 @@
     color: red;
     font-weight: bold;
     background-color: white;
-    position: absolute;
+    position: relative;
     left: 30px;
-    top: -32px;
+    top: 10px;
+    z-index: 1;
+  }
+
+  .form-danger{
+    top: -10px;
   }
 
   label{
       position: relative;
   }
 
+  
+  .footer {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 100;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form .input {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+    width: calc(100% - 60px);
+    margin-bottom: 15px;
+    background: none;
+    border: 2px solid #C4C4C4;
+    height: 67px;
+    border-radius: 100px;
+    padding: 0 30px;
+    outline: none;
+    display: block;
+    font-family: Gilroy;
+    font-weight: 100;
+  }
+  
+  .form-container {
+    height: calc(100% - 114px);
+    width: 100%;
+    margin: 20px 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    position: relative;
+  }
+  
+  .btn {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    width: calc(40% - 10px);
+    height: 67px;
+    border-radius: 360px;
+    background: #0779E4;
+    margin-right: 10px;
+    margin: auto;
+    animation: width ease .3s;
+    margin: auto;
+    font-family: Gilroy;
+  }
+  
+  .btn-primary.btn-spinner{
+    animation-name: splice;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    font-size: 0;
+  }
+
+  @keyframes splice{
+    100%{
+      width: 67px;
+      border-radius: 50%;
+      animation-direction: reverse;
+    }
+  }
+
+  .btn-password {
+    width: 100%;
+    background: none;
+    border: 2px solid #C4C4C4;
+    margin: 30px 0 0;
+    color: #C4C4C4;
+  }
+  
+  .form-btn .btn-other {
+    background: none;
+    border: 2px solid #0779E4;
+    color: #0B5EAB;
+    width: 60%;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    transition: .2s ease-in-out;
+    &:hover{
+      color: white;
+      background-color: #0779E4;
+      transition: .2s ease-out;
+    }
+  }
+  
+  @media (max-width: 1500px) {
+    .form {
+      width: 60%;
+    }
+  }
+  @media (max-width: 1250px) {
+    .form {
+      width: 70%;
+    }
+  
+    .logo {
+      height: 35vw;
+    }
+  
+    .top-right {
+      height: 300px;
+      left: calc(50% - 300px);
+    }
+  
+    .bottom-left {
+      height: 300px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .form {
+      width: 50%;
+      margin-top: 30px;
+    }
+  
+    .left-bg {
+      display: none;
+    }
+  
+    .footer {
+      display: none;
+    }
+  
+    .form-btn {
+      margin-bottom: 30px;
+    }
+  
+    .form-btn::after {
+      bottom: -25px;
+    }
+  
+    .btn-password {
+      margin-top: 15px;
+    }
+  }
+  @media (max-width: 700px) {
+    .form {
+      width: 60%;
+    }
+  }
+  @media (max-width: 500px) {
+    .form {
+      width: 100%;
+    }
+  
+    .form-title {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+  
+    .content {
+      padding: 20px;
+    }
+  }
+  @media (max-width: 400px) {
+    .form-title {
+      font-size: 30px;
+    }
+  
+    .form-btn {
+      flex-direction: column;
+    }
+  
+    .form-btn .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .footer {
+      height: 70px;
+    }
+  }
+  
   @media (max-width: 1000px) {
     .limiter {
       width: 100%;

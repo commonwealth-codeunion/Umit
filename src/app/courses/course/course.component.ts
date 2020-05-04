@@ -28,12 +28,14 @@ export class CourseComponent implements OnInit {
     
     this.cs.getCourse(route)
       .subscribe(course => {
-        this.course = course.data();   
+        this.course = course.data();  
+        console.log('Course was loaded, ', this.course);
+         
       })
-    this.auth.user$
-      .subscribe(user => {
-        this.user = user;
-      })
+    // this.auth.user$
+    //   .subscribe(user => {
+    //     this.user = user;
+    //   })
   }
 
   addLesson(){

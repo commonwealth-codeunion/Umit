@@ -1,36 +1,36 @@
 <div class="content">
-	<span class="login-form-title">
+	<h1 class="form-title">
 		Вход в систему
-	</span>
-	<div class="form">
-		<form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
-			<div class="text-danger" *ngIf="authError && submitted">
+	</h1>
+	<div class="form-container">
+		<form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+			<div class="text-danger form-danger" *ngIf="authError && submitted">
 				<p>{{  authError }}</p>
 			</div>
 			<label>
 				<span class="text-danger"
-                    *ngIf="(email.touched || submitted) && email.errors?.required">
+                    *ngIf="submitted && email.errors?.required">
                     Почта обязательна
 				</span>
                 <span class="text-danger"
-                    *ngIf="email.touched && email.errors?.email">
+                    *ngIf="submitted && email.errors?.email">
                     Некорректный формат почты
                 </span>
 				<input class="input" name="email" formControlName="email" type="email" placeholder="Логин" >
 			</label>
 			<label>
                 <span class="text-danger"
-                    *ngIf="(password.touched || submitted) && password.errors?.required">
+                    *ngIf="submitted && password.errors?.required">
                     Пароль обязателен.
                 </span>
 				<input class="input"  name="password" formControlName="password" type="password" placeholder="Пароль">
 			</label>
 			
 			<div class="form-btn">
-				<button class="btn" type="submit">
+				<button class="btn btn-primary" [class.btn-spinner]="loginLoad" [disabled]="loginLoad" type="submit">
 					Войти
 				</button>
-				<button class="btn singup" (click)="register()">
+				<button class="btn btn-other" (click)="register()">
 					Регистрация
 				</button>
 			</div>
@@ -38,8 +38,5 @@
 				Восстановить пароль
 			</button>
 		</form>
-	</div>
-	<div class="footer">
-		<img class="footer-logo" src="/assets/images/logotype 1.png" alt="logo">
 	</div>
 </div>
