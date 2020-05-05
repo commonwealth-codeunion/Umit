@@ -11,7 +11,7 @@ import { User } from '../../models/user.model';
 export class HomeComponent implements OnInit {
 
   user: User;
-
+loaded = false;
   constructor(
     private router: Router,
     private auth: AuthService,
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
         console.log(user);
         
       });
+      window.onload = () => this.loaded = true;
   }
 
   myFunction() {

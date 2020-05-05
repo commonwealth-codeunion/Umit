@@ -41,4 +41,11 @@ export class CoursesListComponent implements OnInit {
 
     this.router.navigate(['courses/'+cid]);
   }
+
+  getNumbersOfLesson(course): string{
+    let count = course.lessons.length;
+    if(count == 1) return count+' урок';
+    else if(count % 2 || count % 3 || count % 4) return count+' урока';
+    else return count+' уроков';
+  }
 }

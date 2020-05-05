@@ -12,13 +12,14 @@ import { Observable } from 'rxjs';
 export class LendingComponent implements OnInit {
   
   user$: firebase.User;
-
+  loaded = false;
   constructor(
     private router: Router,
     private auth: AuthService  
   ) { }
 
   ngOnInit(): void {
+    window.onload = () => this.loaded = true;
   }
 
   login(){

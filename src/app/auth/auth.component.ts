@@ -7,12 +7,14 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  loaded = false;
 
   constructor(
     private fb: FormBuilder,
   ) { }
 
   ngOnInit(): void {
+    document.addEventListener('DOMContentLoaded',  () => this.loaded = true);
   }
 
 }

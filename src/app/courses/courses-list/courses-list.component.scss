@@ -7,58 +7,76 @@
 
     h1{
         display: inline-block;
-
+        line-height: 62px;
     }
     button{
         float: right;
         background: #0779E4;
         border-radius: 360px;
-        font-weight: bold;
-        font-size: 15px;
+        font-size: 18px;
         padding: 20px;
         color: white;
         border: none;
         cursor: pointer;
+        position: absolute;
+        right: 5%;
     }
 
 }
 
+button{
+    font-family: Gilroy;
+    font-weight: bold;
+    outline: none;
+}
 .courses{
     padding: 50px;
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     font-weight: bold;
 
     .course{
-        padding: 50px;
-        margin: 20px;
+        padding: 50px 60px;
+        margin: 50px;
+        height: 350px;
+        width: 350px;
         border: 2px solid #F0F0F0;
         border-radius: 30px;
         position: relative;
 
-        h1{
+        .name{
             color: #0779E4;
+            font-size: 1.6rem;
             margin-bottom: 20px;
         }
-        button{
+        .description{
+            font-weight: 100;
+            font-size: 1.5rem;
+        }
+        .lesson-number{
+            font-size: 1.6rem;
+            color: #F0F0F0;
+            position: absolute;
+            left: 60px;
+            bottom: 50px;
+        }
+
+        .start{
             background: white;
             border: 2px solid #0779E4;
-            border-radius: 360px;
-            color: #0779E4;
-            padding: 20px;
-            font-size: 15px;
-            font-weight: bold;
-            transition: .2s;
+            border-radius: 50%;
+            height: 67px;
+            width: 67px;
             cursor: pointer;
 
             position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translate(-50%, 0);
+            bottom: 37px;
+            right: 5%;
+            transition: .2s;
 
             &:hover{
-                background: #0779E4;
-                color: white;
+                transform: scale(1.1);
                 transition: .2s;
             }
         }

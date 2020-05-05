@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
   ]
 })
 export class MainComponent implements OnInit {
+  // loaded = false;
 
   constructor(
     private auth: AuthService,
@@ -19,7 +20,6 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Run main component!');
-    
   }
 
   

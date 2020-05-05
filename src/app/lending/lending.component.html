@@ -109,8 +109,8 @@
         }
     </style>
 </head>
-   <div class="tb-preloader" style="display: none;">
-        <div class="tb-preloader-in" style="display: none;"><img src="/assets/lending/logo-dark.png" alt="loader-logo"></div>
+   <div class="preloader" [class.hidden]="loaded">
+        <div class="loader"></div>
     </div>
     <header class="tb-site-header tb-default-width tb-style1 tb-sticky-disabled tb-solid-header tb-color1 tb-header-border1 tb-remove-promobar-active small-height">
         <div class="tb-main-header">
@@ -118,7 +118,7 @@
                 <div class="tb-main-header-in">
                     <div class="tb-main-header-left">
                         <div class="tb-site-branding">
-                            <a href="#" class="tb-custom-logo-link "><img src="./assets/images/logotype 1.png" alt="logo" class="tb-custom-logo"></a>
+                            <a href="#" class="tb-custom-logo-link "><img src="/assets/images/logo.png" alt="logo" class="tb-custom-logo"></a>
                         </div>
                     </div>
                     <div class="tb-main-header-right">

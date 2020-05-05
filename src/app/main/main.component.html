@@ -8,5 +8,6 @@
     <img src="/assets/images/avatar.jfif" alt="Профиль" (click)="logout()" class="logo">
 </header>
 <div class="content" [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
+    <router-outlet #outlet="outlet">
+    </router-outlet>
 </div>
