@@ -58,6 +58,14 @@ export class CourseComponent implements OnInit {
   getToLesson(index: number){
     this.router.navigate(['read/'+index], {relativeTo: this.rout})
   }
+  
+  change(){
+    alert('Change the course');
+  }
+
+  continue(){
+    alert('Redirect to leesson');
+  }
 
   getSubscribe(){
     this.userFull.subscribe(user => {
