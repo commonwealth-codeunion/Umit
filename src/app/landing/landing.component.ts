@@ -5,11 +5,11 @@ import { User } from '../models/user.model';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-lending',
-  templateUrl: './lending.component.html',
-  styleUrls: ['./lending.component.scss']
+  selector: 'app-landing',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss']
 })
-export class LendingComponent implements OnInit {
+export class LandingComponent implements OnInit {
   
   user$: firebase.User;
   loaded = false;

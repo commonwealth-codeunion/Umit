@@ -14,7 +14,7 @@ export class AuthComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    document.addEventListener('DOMContentLoaded',  () => this.loaded = true);
+    window.onload = () => this.loaded = true;
   }
 
 }
