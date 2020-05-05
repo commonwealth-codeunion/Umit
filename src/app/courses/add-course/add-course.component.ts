@@ -13,12 +13,14 @@ import { User } from '../../models/user.model';
   styleUrls: ['./add-course.component.scss']
 })
 export class AddCourseComponent implements OnInit, OnDestroy{
-  user: User;
+  user: firebase.User;
   lessonEdit = false;
+  courseLoad = false;
+  Error;
   currentLesson$ = new BehaviorSubject(null);
   courseForm = this.fb.group({
     name: ['', Validators.required],
-    description: [''], 
+    description: ['', Validators.required], 
     lessons: this.fb.array([])
   });
   
@@ -37,18 +39,16 @@ export class AddCourseComponent implements OnInit, OnDestroy{
   ) { }
 
   // courseForm: FormGroup;
-
+  submitted = false;
 
   ngOnInit(): void {
     // this.cs.coursEdit.subscribe(course => this.courseForm = course);
     // console.log(this.courseForm.value);
     console.log('Add-course Init!');
-    // this.auth.user$
-    //   .subscribe(user => {
-    //     console.log(user);
-        
-    //     this.user = user;
-    //   })
+    this.auth.getUserState()
+      .subscribe(user => {
+        this.user = user;
+      });
   }
 
   ngOnDestroy(){
@@ -73,7 +73,7 @@ export class AddCourseComponent implements OnInit, OnDestroy{
     // this.router.navigate(['courses/add-lesson'],  { skipLocationChange: true })
     this.lessons.push(
       this.fb.group({
-        subject: [''],
+        subject: ['', Validators.required],
         blocks: this.fb.array([
           this.fb.group({
             name: ['', Validators.required],
@@ -108,19 +108,22 @@ export class AddCourseComponent implements OnInit, OnDestroy{
   }
 
   onSubmit(){
-      const course = 
-        this.courseForm.value;
-      //   ...{
-      //     author: this.user.uid
-      //   }
-      // }
-      console.log(this.user);
+    this.submitted = true;
+    if(this.courseForm.valid){
+      this.courseLoad = true;
+      const course = {
+        ...this.courseForm.value,
+        ...{
+          author: this.user.uid
+        }
+      }
+      console.log(course);
       
       this.db.addCourse(course)
-        .catch(err => console.error(err))
+        .catch(err => this.Error = err)
         .then(() => {
           this.router.navigate(['courses/list'])
         })
     }
-
+  }
 }

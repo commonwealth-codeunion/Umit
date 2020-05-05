@@ -18,7 +18,8 @@ export class User implements firebase.UserInfo {
     }
 }
 
-class UserCourse extends Course{
+class UserCourse{
+    cid: string;
     lastLesson = 0;
     complete = false;
 }

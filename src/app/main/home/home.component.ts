@@ -11,7 +11,13 @@ import { User } from '../../models/user.model';
 export class HomeComponent implements OnInit {
 
   user: User;
-loaded = false;
+  loaded = false;
+  courses = {
+    subscribed: [],
+    сompleted: [],
+    recommended: []
+  }
+
   constructor(
     private router: Router,
     private auth: AuthService,
@@ -36,5 +42,9 @@ loaded = false;
     } else {
         x.className = "topnav";
     }
-}
+  }
+
+  getNumbersOfLessons(count: number):string{
+    return count+' Уроков'
+  }
 }

@@ -30,6 +30,8 @@ export class AddLessonComponent implements OnInit {
   @Input() lessonIndex: number = -1;
 
   isCourseEditor = true;
+  submitted = false;
+  selected = false;
   currentBlock = new BehaviorSubject(0);
   types = ['html', 'video', 'file'];
 
@@ -78,10 +80,15 @@ export class AddLessonComponent implements OnInit {
     });
     const route = this.route.snapshot.paramMap.get('dog');
     if(route) this.isCourseEditor = false; 
+
+    console.log(this.blocks.controls[0].get('name'));
+    console.log(this.blocks.controls[0]);
+    
   }
 
   pushBlock(name: string = '', type: string = 'html', content: string = ''){
-    if(this.blocks.value[this.currentBlock.value].name.length > 0){
+    this.selected = true;
+    if(this.blocks.valid){
       this.blocks.push(
         this.fb.group({
           name: [name, Validators.required],
@@ -89,14 +96,20 @@ export class AddLessonComponent implements OnInit {
           content: [content]
         }));
       this.currentBlock.next(this.blocks.value.length-1);
-      console.log(this.currentLesson.value);
+      this.selected = false;
+      console.log(this.selected);
     }
-  }
+  } 
 
   saveLesson(){
-    this.currentBlock.next(0);
-    this.onSubmit.emit(this.currentLesson);
-
+    this.submitted = true;
+    this.selected = true;
+    if(this.currentLesson.valid){
+      this.currentBlock.next(0);
+      this.submitted = false;
+      this.selected = false;
+      this.onSubmit.emit(this.currentLesson);
+    }
     // if(this.isCourseEditor){
     //   this.onSubmit.emit({
     //     lessonGroup: this.lesson.value,
@@ -108,25 +121,18 @@ export class AddLessonComponent implements OnInit {
   }
 
   openSelect($event: MouseEvent){
-    console.log($event);
-    document.querySelector('.select').classList.toggle('open'); 
-    // document.querySelector('.select').classList.toggle('open');
+    if(this.blocks.valid){
+      document.querySelector('.select').classList.toggle('open'); 
+    }
   }
-
-  // chageBlockName(event: any, index: number){
-  //   const name = this.blocks.get(index+'.name');
-  //   // const name = document.querySelector("#block_"+index+"_name") as HTMLInputElement
-  //   // block.get('name').setValue(name.value); 
-  //   console.log(name);
-  //   name.setValue(event.target.value)
-    
-  // }
 
   selectBlock(index: number){
     if(index == this.currentBlock.value) return;
-    console.log('wow');
-    
-    this.currentBlock.next(index)
+    this.selected = true;
+    if(this.blocks.valid){
+      this.selected = false;
+      this.currentBlock.next(index);
+    }
   }
 
   chageType(type: string){
@@ -154,22 +160,4 @@ export class AddLessonComponent implements OnInit {
         return 'Блок'
     }
   }
-
-// for (const option of document.querySelectorAll(".option")) {
-//     option.addEventListener('click', function() {
-//         if (!this.classList.contains('selected')) {
-//             this.parentNode.querySelector('.option.selected').classList.remove('selected');
-//             this.classList.add('selected');
-//             this.closest('.select').querySelector('.select-trigger span').textContent = this.textContent;
-//         }
-//     })
-// }
-
-// window.addEventListener('click', function(e) {
-//     const select = document.querySelector('.select')
-//     if (!select.contains(e.target)) {
-//         select.classList.remove('open');
-//     }
-// });
-
 }

@@ -1,32 +1,30 @@
 <app-add-lesson id="lesson-editor" (onSubmit)="saveLesson($event)" [actualLesson]="currentLesson$"  [style.display]="lessonEdit ? 'block' : 'none'"></app-add-lesson>
-<div id="editor" [style.display]="!lessonEdit ? 'grid' : 'none'">
+<div id="editor" [style.display]="!lessonEdit ? 'flex' : 'none'">
     <div class="course left">
         <h1>Добавление курса</h1>
-        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="courseForm"  (ngSubmit)="onSubmit()">
             <p>Основная информация:</p>
-
-            <input id="c-name" type="text" placeholder="Название курса..." formControlName="name" name="name">
-            <div *ngIf="courseForm.controls['name'].invalid && (courseForm.controls['name'].dirty || courseForm.controls['name'].touched)" class="alert alert-danger">
-                <div *ngIf="courseForm.controls['name'].errors.required">
-                    Необходимо название курса
-                </div>
-            </div>
-            <textarea name="description" id="c-description" cols="30" rows="10" formControlName="description" name="description"></textarea>
+            <span class="text-danger" *ngIf="Error">{{ Error.text }}</span>      
+                    <span class="text-danger" *ngIf="courseForm.get('name').errors.required && submitted">
+                        Необходимо название курса
+                    </span>
+                <input id="c-name" type="text" placeholder="Название курса..." formControlName="name" name="name">
+                    <span class="text-danger" *ngIf="courseForm.controls['description'].errors.required && submitted">
+                        Необходимо описание курса
+                    </span>
+                <textarea name="description" id="c-description" cols="30" rows="10" formControlName="description" name="description" placeholder="Описание курса..."></textarea>
             
-            <button [disabled]="!courseForm.valid || courseForm.pristine" type="submit">Создать курс</button>
+            <button type="submit" [class.btn-spinner]="courseLoad">Создать курс</button>
         </form>
     </div>
-    <pre>{{ courseForm.value | json }}</pre>
-    <div> 
-        <div class="lessons right">
-            <div class="lesson" *ngFor="let lesson of lessons.value; let i = index" (click)="editLesson(i)">
-                <span>Урок {{ i+1 }}</span>
-                <p>{{ lesson.subject }}</p>
-            </div>
-            <div class="lesson add-lesson" (click)="addLesson()">
-                <span class="plus">+</span>
-                <p>Добавить урок</p>
-            </div>
+    <div class="lessons right">
+        <h3 class="title">Уроки:</h3>
+        <div class="lesson" *ngFor="let lesson of lessons.value; let i = index" (click)="editLesson(i)">
+            <span>Урок {{ i+1 }}</span>
+            <p>{{ lesson.subject }}</p>
+        </div>
+        <div class="lesson add-lesson" (click)="addLesson()">
+            +
         </div>
     </div>
 </div>

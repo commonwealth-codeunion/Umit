@@ -49,16 +49,17 @@ $color-primary: #ABA194;
     
     &.hidden{
         animation: hidden .5s linear forwards;
+        visibility: hidden;
     }
 }
 
 @keyframes hidden{
-  from{
-      visibility: visible;
-  }
+//   from{
+//       visibility: visible;
+//   }
   to{
      opacity: 0;
-     visibility: hidden;
+    //  visibility: hidden;
   }
 }
 
