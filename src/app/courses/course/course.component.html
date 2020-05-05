@@ -1,12 +1,37 @@
 <div *ngIf="course" class="course">
-    <h1>{{ course.name }}</h1>
-    <div class="lessons">
-        <div *ngFor="let lesson of course.lessons; let i = index" class="lesson" (click)="getToLesson(i)">
-            <p>Урок {{ i+1 }}</p>
-            <p>Тема: {{ lesson.subject }}</p>
+    <div class="title">
+        <h1 class="course-title">{{ course.name }}</h1>
+        <button class="btn btn-main" (click)="change()" *ngIf="user.uid == course.author">Изменить</button>
+        <button class="btn btn-main" (click)="continue()" *ngIf="subscribe">Продолжить</button>
+        <button class="btn btn-main" (click)="getSubscribe()" *ngIf="!subscribe && user.uid != course.author">Подписаться</button>
+    </div>
+    <div class="content">
+        <div class="course-info">
+            <div class="param">
+                <p class="name">Название курса:</p>
+                <p class="info">{{ course.name }}</p>
+            </div>
+            <div class="param">
+                <p class="name">Описание:</p>
+                <p class="info">{{ course.description }}</p>
+            </div>
+            <div class="param">
+                <p class="name">Количество уроков:</p>
+                <p class="info">{{ course.lessons.length }}</p>
+            </div>
+            <div class="param" *ngIf="course.tags">
+                <p class="name">Теги:</p>
+                <p class="info" *ngFor="let tag of course.tags">{{ tag }}</p>
+            </div>
         </div>
-        <div class="lesson add-lesson" (click)="addLesson()">
-            Добавить урок
+        <div class="lessons" *ngIf="user">
+            <div *ngFor="let lesson of course.lessons; let i = index" class="lesson" (click)="getToLesson(i)">
+                <p class="number">Урок {{ i+1 }}</p>
+                <p class="subject">{{ lesson.subject }}</p>
+            </div>
+            <div class="lesson lesson-add" *ngIf="user.uid == course.author" (click)="addLesson()">
+                +
+            </div>
         </div>
     </div>
 </div>

@@ -6,7 +6,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AuthGuard } from './guard/role/auth.guard';
 import { SecretComponent } from './secret/secret.component';
 import { AuthComponent } from './auth/auth.component';
-import { LendingComponent } from './lending/lending.component';
+import { LandingComponent } from './landing/landing.component';
 import { AdminGuard } from './guard/role/admin.guard';
 import { AdminComponent } from './admin/admin.component';
 import { SchoolsComponent } from './admin/schools/schools.component';
@@ -22,7 +22,7 @@ import { MainComponent } from './main/main.component';
 import { redirectUnauthorizedTo, canActivate, AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-const redirectUnauthorizedToLanding = () => redirectUnauthorizedTo(['lending']);
+const redirectUnauthorizedToLanding = () => redirectUnauthorizedTo(['landing']);
 
 const routes: Routes = [
   {
@@ -88,8 +88,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'lending',
-    component: LendingComponent,
+    path: 'landing',
+    component: LandingComponent,
   },
   {
     path: 'auth',

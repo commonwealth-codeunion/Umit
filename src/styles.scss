@@ -27,7 +27,7 @@ $color-primary: #ABA194;
 .preloader{
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     left: 0;
     display: flex;
     align-items: center;
@@ -49,13 +49,17 @@ $color-primary: #ABA194;
     
     &.hidden{
         animation: hidden .5s linear forwards;
+        visibility: hidden;
     }
 }
 
 @keyframes hidden{
+//   from{
+//       visibility: visible;
+//   }
   to{
-      visibility: hidden;
-      opacity: 0;
+     opacity: 0;
+    //  visibility: hidden;
   }
 }
 

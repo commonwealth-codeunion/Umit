@@ -1,26 +1,126 @@
 .course{
-    padding: 50px;
+    font-weight: bold;
 
-    h1{
-        margin-bottom: 50px;
+    .title{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+        background: url('/assets/images/title_back.jpg') no-repeat;
+        background-size: cover;
+
+
+        .course-title{
+            font-size: 3rem;
+            color: white;
+            display: block;
+            position: relative;
+        }
+
+        .btn-main{
+            width: 12vw;
+            color: white;
+            padding: 30px 35px;
+            background: #0779E4;
+            font-size: 1.4rem;
+            margin: auto;
+            border: none;
+            border-radius: 360px;
+            font-family: Gilroy;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover{
+                transform: scale(1.1);
+                transition: .2s;
+            }
+        }
     }
 
-    .lessons{
+    .content{
+        width: 100%;
+        padding: 60px;
         display: flex;
+        align-items: baseline;
 
-        .lesson{
-            border-radius: 25px;
-            background: #c4c4c4;
-            height: 100px;
-            width: 100px;
-            padding: 25px;
-            margin: 0 20px;
+        .course-info{
+            height: 100%;
+            border: 2px solid #f0f0f0;
+            border-radius: 20px;
+            padding: 25px 50px;
+            width: 25%;
+            margin-right: 5%;
+            text-align: left;
+            font-size: 1.4em;
+            transition: .2s;
+
+            &:hover{
+                transform: scale(102%);
+                transition: .2s;
+            }
+
+            .param{
+                .name{
+                    margin-bottom: 20px;
+                }
+                .info{
+                    margin-bottom: 30px;
+                    font-weight: 100;
+                }
+            }
         }
-    
-        .add-lesson{
-            cursor: pointer;
-            background: white;
-            border: 2px solid #c4c4c4;
+
+        .lessons{
+            display: flex;
+            width: 60%;
+
+            .lesson{
+                margin: 0 30px 20px 0;
+                height: 120px;
+                width: 190px;
+                padding: 25px;
+                background: #f0f0f0;
+                border-radius: 15px;
+                font-size: 1.2em;
+                cursor: pointer;
+                transition: .2s;
+
+                .number{
+                    margin-bottom: 20px;
+                }
+                
+                .subject{
+                    color: #c4c4c4;
+                }
+
+                &:hover{
+                    transition: .2s;
+                    transform: scale(105%);
+                }
+                &.lesson-add{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 4rem;
+                    color: #0779E4;
+                    border: 2px solid #0779E4;
+                    background: none;
+                    font-weight: 100;
+                    transition: .2s;
+
+                    &:hover{
+                        color: white;
+                        background: #0779E4;
+                        transition: .2s;
+                    }
+                }
+            }
         }
+        
     }
 }

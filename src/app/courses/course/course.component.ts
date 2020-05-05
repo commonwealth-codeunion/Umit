@@ -4,6 +4,7 @@ import { DbService } from '../../services/db.service';
 import { CourseService } from '../../services/course.service';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user.model';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-course',
@@ -11,38 +12,63 @@ import { User } from '../../models/user.model';
   styleUrls: ['./course.component.scss']
 })
 export class CourseComponent implements OnInit {
-  user: User;
+  user: firebase.User;
   course;
+  route: string;
+  subscribe = false;
+  userRef;
+  userFull;
 
   constructor(
-    private route: ActivatedRoute,
+    private rout: ActivatedRoute,
     private router: Router,
-    private db: DbService,
+    private db: AngularFirestore,
     private cs: CourseService,
     private auth: AuthService,
   ) { }
 
   ngOnInit(): void {
-    const route = this.route.snapshot.paramMap.get('dog');
-    console.log(route);
+    this.route = this.rout.snapshot.paramMap.get('dog');
+    console.log(this.route);
     
-    this.cs.getCourse(route)
+    this.cs.getCourse(this.route)
       .subscribe(course => {
         this.course = course.data();  
         console.log('Course was loaded, ', this.course);
          
       })
-    // this.auth.user$
-    //   .subscribe(user => {
-    //     this.user = user;
-    //   })
+    this.auth.getUserState()
+      .subscribe(user => {
+        this.user = user;
+        this.userRef = this.db.doc<User>('Users/'+this.user.uid)
+        this.userFull = this.userRef.valueChanges();
+
+        this.userFull.subcribe(user => {
+          user.courses.map(i => i.cid == this.route ? this.subscribe = true : null );
+        });
+        console.log(user.uid);
+
+      })
   }
 
   addLesson(){
-    this.router.navigate(['add-lesson'], {relativeTo: this.route})
+    this.router.navigate(['add-lesson'], {relativeTo: this.rout})
   }
 
   getToLesson(index: number){
-    this.router.navigate(['read/'+index], {relativeTo: this.route})
+    this.router.navigate(['read/'+index], {relativeTo: this.rout})
+  }
+
+  getSubscribe(){
+    this.userFull.subscribe(user => {
+      user.courses.push({
+        cid: this.route,
+        lastLesson: 0,
+        complete: false
+      })
+      this.userRef.update({courses: user.courses})
+        .then(() => this.getToLesson(0))
+        .catch(err => console.error(err));
+    })      
   }
 }

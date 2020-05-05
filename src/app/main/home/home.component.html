@@ -1,46 +1,56 @@
-
+<!-- 
 <div class="preloader" [class.hidden]="user">
     <div class="loader"></div>
 </div>
 <div class="article" *ngIf="user">
-    <div class="welcome">
-        <h1>Саламалейкум, {{ user.firstName }}!</h1>
-        <p>По жизни ты {{ user.role }}</p>
+    <div class="user-info">
+        <h1>Привет, {{ user.firstName }}</h1>
     </div>
-    <div class="course" *ngIf="user.courses">
-        <h4>Текущие курсы</h4>
-        <div class="defined-course" *ngFor="let course of user.courses">
-            <h4 class="title-of-course">
-                {{ course.name }}
-            </h4>
-            <p>{{ course.lastLesson + '/' + (course.lessons.length+1) }}</p>
+    <div class="content">
+        <div class="course-group" *ngIf="courses.subscribed">
+            <h3 class="group-name">В процессе:</h3>
+            <div class="course" *ngFor="let course of courses.subscribed">
+                <p class="name">{{ course.name }}</p>
+                <p class="description">{{ course.description }}</p>
+                <span class="lessons-number">{{ getNumbersOfLessons(course.lessons.length) }}</span>
+                <button class="course-play"></button>
+                <div class="progress">
+                    <p>Прогресс:</p>
+                    <div class="white-bar">
+                        <div class="blue-bar" [style.width]="course.progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="course-group" *ngIf="courses.recommended">
+            <h3 class="group-name">Рекомендованные:</h3>
+            <div class="course" *ngFor="let course of courses.recommended">
+                <p class="name">{{ course.name }}</p>
+                <p class="description">{{ course.description }}</p>
+                <span class="lessons-number">{{ getNumbersOfLessons(course.lessons.length) }}</span>
+                <button class="course-play"></button>
+                <div class="progress">
+                    <p>Прогресс:</p>
+                    <div class="white-bar">
+                        <div class="blue-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="course-group" *ngIf="courses.сompleted">
+            <h3 class="group-name">Пройденные:</h3>
+            <div class="course" *ngFor="let course of courses.сompleted">
+                <p class="name">{{ course.name }}</p>
+                <p class="description">{{ course.description }}</p>
+                <span class="lessons-number">{{ getNumbersOfLessons(course.lessons.length) }}</span>
+                <button class="course-play"></button>
+                <div class="progress">
+                    <p>Прогресс:</p>
+                    <div class="white-bar">
+                        <div class="blue-bar"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="course">
-        <h4>Рекомендованные курсы</h4>
-        <div class="defined-course">
-            <h4 class="title-of-course">
-                Курс по поеданию хачапури
-            </h4>
-            <p>Открыть</p>
-        </div>
-    </div>
-    <div class="course">
-        <h4>Пройденные курсы</h4>
-        <div class="defined-course">
-            <h4 class="title-of-course">
-                Курс по поеданию хачапури
-            </h4>
-            <p>Отлично</p>
-        </div>
-    </div>
-    <div class="course">
-        <h4>Мои курсы</h4>
-        <div class="defined-course">
-            <h4 class="title-of-course">
-                Курс по поеданию хачапури
-            </h4>
-            <p>100 студентов</p>
-        </div>
-    </div>
-</div>
+</div> -->

@@ -1,5 +1,5 @@
-.left{grid-area: left}
-.right{grid-area: right}
+// .left{grid-area: left}
+// .right{grid-area: right}
 
 
 #lesson-editor{
@@ -9,11 +9,9 @@
 #editor{
     padding: 50px;
 
-    display: grid;
-    grid-template-areas: 
-    'left left right right right';
-    grid-gap: 20px;
-
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 
     h1{
         font-size: 30px;
@@ -23,45 +21,78 @@
     p{
         color: #adadad;
         font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .left{
+        width: 50%;
     }
 
-    #c-name, #c-description{
+    .error{
+        position: absolute;
+    }
+
+    .text-danger{
+        color: red;
         background-color: white;
-        border: 1px solid #c4c4c4;
-        border-radius: 15px;
-        padding: 20px;
-        margin: 20px 0;
-        display: block;
-        color: #c4c4c4;
-        font-weight: lighter;
-        font-size: 18px;
     }
 
-    #c-description{
-        max-width: 300px;
-        max-height: 250px;
-        min-height: 200px;
-        height: 200px;
-    }
+        #c-name, #c-description{
+            background-color: white;
+            border: 1px solid #c4c4c4;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            display: block;
+            font-weight: lighter;
+            font-family: Gilroy;
+            font-size: 18px;
+            width: 30%;
+        }
 
-    button{
-        background: #0779E4;
-        border-radius: 25px;
-        font-weight: bold;
-        font-size: 20px;
-        padding: 20px;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
+        #c-description{
+            width: 80%;
+            max-width: 80%;
+            min-width: 6%;
+            max-height: 300px;
+            min-height: 200px;
+            height: 255px;
+        }
 
+        button{
+            background: #0779E4;
+            border-radius: 360px;
+            font-weight: bold;
+            font-size: 20px;
+            width: 13vw;
+            height: 67px;
+            padding: 25px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: Gilroy;
+
+        }
+
+        .btn-spinner{
+            font-size: 0;
+          }
+    
+    
     .lessons{
         background-color: white;
         border: 2px solid #f0f0f0;
-        padding: 35px;
+        padding: 45px;
         border-radius: 30px;
         display: flex;
+        width: 50%;
         flex-wrap: wrap;
+        position: relative;
+
+        .title{
+            position: absolute;
+            top: 15px;
+            left: 30px;
+        }
 
         .lesson{
             background: #f0f0f0;
@@ -88,13 +119,15 @@
             border: 3px solid #0779E4;
             background: rgba(#0779E4, 5%);
             text-align: center;
+            font-size: 4em;
             font-weight: lighter;
             color: #0779E4;
+            transition: .2s;
 
-            .plus{
-                // border: 2px solid #0779E4;
-                // border-radius: 360px;
-                font-size: 30px;
+            &:hover{
+                background: #0779E4;
+                color: white;
+                transform: scale(105%);
             }
         }
     }

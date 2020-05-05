@@ -13,7 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { RegisterComponent } from './auth/register/register.component';
-import { LendingComponent } from './lending/lending.component';
+import { LandingComponent } from './landing/landing.component'; 
 import { SecretComponent } from './secret/secret.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthComponent } from './auth/auth.component';
@@ -43,7 +43,7 @@ import { MainComponent } from './main/main.component';
     HomeComponent,
     AppComponent,
     AuthComponent,
-    LendingComponent,
+    LandingComponent,
     AdminComponent,
     SchoolsComponent,
     AddComponent,

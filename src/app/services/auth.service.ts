@@ -43,9 +43,9 @@ export class AuthService {
       })
   }
 
-  // getUserState(){
-  //   return this.Auth.authState;
-  // }
+  getUserState(){
+    return this.Auth.authState;
+  }
 
   createUser(user){
     this.newUser = user;
