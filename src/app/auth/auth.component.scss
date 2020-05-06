@@ -17,9 +17,27 @@
     width: 50%;
     height: 100%;
     position: absolute;
-    background-image: url("/assets/images/img-01.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0779E4;
+    
+    .bottom-left{
+      height: 15vw;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+
+  }
+
+  .top-right{
+    height: 15vw;
+    position: absolute;
+    top: 0;
+    left: -15vw;
   }
 
   .limiter {
