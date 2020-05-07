@@ -34,6 +34,7 @@ import { LessonComponent } from './courses/lesson/lesson.component';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { CourseService } from './services/course.service';
 import { MainComponent } from './main/main.component';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { MainComponent } from './main/main.component';
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
+    QuicklinkModule,
   ],
   providers: [
     AuthGuard,

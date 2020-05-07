@@ -158,7 +158,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [QuicklinkModule, RouterModule.forRoot(routes, {preloadingStrategy: QuicklinkStrategy})],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: QuicklinkStrategy})],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
