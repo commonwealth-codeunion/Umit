@@ -186,11 +186,12 @@
   }
 
   .btn-password {
-    width: 100%;
+    width: 80%;
     background: none;
     border: 2px solid #C4C4C4;
-    margin: 30px 0 0;
+    margin: 65px auto 0;
     color: #C4C4C4;
+    display: block;
   }
   
   .form-btn .btn-other {
@@ -264,9 +265,6 @@
     }
   }
   @media (max-width: 500px) {
-    .form {
-      width: 100%;
-    }
   
     .form-title {
       font-size: 40px;
@@ -301,8 +299,29 @@
       width: 100%;
     }
 
+    .input{
+      margin: 15px auto!important;
+    }
+
+    .btn{
+      margin: 5px auto!important;
+    }
+
+    .btn.btn-password{
+      margin-bottom: 20px;
+      display: block;
+    }
+
     .left-bg {
       display: none;
+    }
+
+    .form-btn{
+      margin-bottom: 20px;
+
+      &:after{
+        display: none;
+      }
     }
   }
 

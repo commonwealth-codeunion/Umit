@@ -1,7 +1,77 @@
-.newsletter-submit{
-    background: #50b83c;
-    height: 100%;
-    padding: 15px;
-    color: white;
-    font-size: 15px;
+@import '../../assets/landing/style';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none!important;
+}
+
+.elementor-page{
+    h1, h2, h3, h4, h5, h6{
+        font-weight: 500;
+        font-family: sans-serif;
+        line-height: 1.2em;
+        color: #222;
+    
+    }
+
+    .card-icon{
+        height: 70%;
+    }
+}
+
+.footer {
+    background: #7a77d0;
+
+    .container{
+        display: flex;
+        align-items: center;
+        font-weight: 300!important;
+
+        padding: 50px 15px;
+    }
+    
+
+    .tb-subscribe-heading{
+        font-family: Gilroy;
+    }
+
+    .submit-btn{
+        .newsletter-submit{
+            background: #50b83c;
+            display: inline-block;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+        }
+        
+        transition: .2s;
+        
+        &:hover{
+            color: white;
+            transform: scale(101%);
+            transition: .2s;
+        }
+    }
+}
+
+@media screen and (max-width: 763px){
+    .footer .container{
+        flex-wrap: wrap;
+        
+
+        .tb-subscribe-heading{
+            margin-top: 15px;
+            font-size: 40px;
+            font-family: Gilroy;
+        }
+
+    }
+}
+
+.wp-post-image{
+    width: 100%;
 }
