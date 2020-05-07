@@ -14,7 +14,11 @@ export class AuthComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    window.onload = () => this.loaded = true;
+    this.loaded = document.readyState == 'complete' ? true : false;
+    window.onload = () =>{
+      this.loaded = true;
+      console.log(this.loaded);
+    } 
   }
 
 }

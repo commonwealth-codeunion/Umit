@@ -21,7 +21,7 @@ import { LoginGuard } from './guard/role/login.guard';
 import { MainComponent } from './main/main.component';
 import { redirectUnauthorizedTo, canActivate, AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { AngularFireAuth } from '@angular/fire/auth';
-
+import { QuicklinkStrategy, QuicklinkModule } from 'ngx-quicklink';
 const redirectUnauthorizedToLanding = () => redirectUnauthorizedTo(['landing']);
 
 const routes: Routes = [
@@ -158,7 +158,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+  imports: [QuicklinkModule, RouterModule.forRoot(routes, {preloadingStrategy: QuicklinkStrategy})],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

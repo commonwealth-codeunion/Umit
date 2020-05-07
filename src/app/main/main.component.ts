@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Run main component!');
-
+    this.loaded = document.readyState == 'complete' ? true : false;
     window.onload = () => 
       this.loaded = true;
   }

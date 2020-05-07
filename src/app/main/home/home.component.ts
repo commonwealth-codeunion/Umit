@@ -32,7 +32,8 @@ export class HomeComponent implements OnInit {
         console.log(user);
         
       });
-      window.onload = () => this.loaded = true;
+    this.loaded = document.readyState == 'complete' ? true : false;
+    window.onload = () => this.loaded = true;
   }
 
   myFunction() {
